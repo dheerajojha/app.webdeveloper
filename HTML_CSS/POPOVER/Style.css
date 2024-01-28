@@ -1,0 +1,123 @@
+:root {
+	--bgColor: rgb(244, 241, 241);
+	--whiteColor: #fff;
+	--blackColor: #0000008a;
+	--lightBlackColor: #202124;
+	--grayColor: #dee1e3;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Lucida Sans",
+     "Lucida Sans Regular", "Lucida Grande", 
+     "Lucida Sans Unicode", Geneva,
+		Verdana, sans-serif;
+	list-style: none;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--whiteColor);
+	padding: 1rem;
+}
+
+header ul {
+	display: flex;
+	align-items: center;
+	column-gap: 1rem;
+}
+
+header .right .parent-list li:nth-child(1) {
+	border: 1px solid var(--blackColor);
+	border-radius: 50%;
+	padding: 8px;
+	width: 40px;
+	height: 40px;
+	display: grid;
+	place-content: center;
+}
+
+header .right .parent-list li:nth-child(3) {
+	background-color: var(--grayColor);
+	border-radius: 50%;
+	padding: 8px;
+	width: 40px;
+	height: 40px;
+	display: grid;
+	place-content: center;
+}
+header i {
+	font-size: 20px;
+}
+
+img {
+	width: 40px;
+	height: 40px;
+}
+
+.home-wrapper {
+	height: 100vh;
+	width: 100%;
+	background-color: var(--bgColor);
+}
+
+header .right .parent-li {
+	position: relative;
+}
+
+.popup-card {
+	background: var(--lightBlackColor);
+	border: 10px solid var(--grayColor);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	width: 350px;
+	height: 350px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	overflow: auto;
+	padding: 1rem;
+	position: absolute;
+	top: -450px;
+	left: -300px;
+	transition: 0.5s ease;
+	row-gap: 1rem;
+	border-radius: 20px;
+}
+
+header .right .parent-li:hover .popup-card {
+	top: 40px;
+	cursor: pointer;
+}
+
+.popup-card .icon-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-basis: 33%;
+	row-gap: 0.5rem;
+}
+
+.popup-card .icon-box h3 {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--whiteColor);
+}
+
+header .right .popup-card::-webkit-scrollbar {
+	width: 10px;
+}
+
+header .right .popup-card::-webkit-scrollbar-track {
+	background: var(--grayColor);
+	border-radius: 20px;
+}
+
+header .right .popup-card::-webkit-scrollbar-thumb {
+	background: red;
+	border-radius: 20px;
+}
