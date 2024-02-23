@@ -168,7 +168,7 @@ const HomeScreen3: React.FC = () => {
           }}>
           <Image
             source={require('../Assets/Images/footerPic.jpg')}
-            style={{width: 40, height: 40, borderRadius: 50}}
+            style={{width: 30, height: 30, borderRadius: 50}}
           />
           <Text style={{color: '#fff'}}>Swipe</Text>
           <AntIcon name="right" color={'#fff'} />
