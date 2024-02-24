@@ -4,6 +4,7 @@ import HomeScreen1 from '../Screens/HomeScreen1';
 import React from 'react';
 import HomeScreen2 from '../Screens/HomeScreen2';
 import HomeScreen3 from '../Screens/HomeScreen3';
+import HomeScreen4 from '../Screens/HomeScreen4';
 // import BottomNavigation from './BottomNavigation';
 
 const Stack = createNativeStackNavigator();
@@ -12,6 +13,7 @@ const StackNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         {/* <Stack.Screen name="TabNavigation" component={BottomNavigation} /> */}
+        <Stack.Screen name="Home4" component={HomeScreen4} />
         <Stack.Screen name="Home3" component={HomeScreen3} />
         <Stack.Screen name="Home2" component={HomeScreen2} />
         <Stack.Screen name="Home1" component={HomeScreen1} />
