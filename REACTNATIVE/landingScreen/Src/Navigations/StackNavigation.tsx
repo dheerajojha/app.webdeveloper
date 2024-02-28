@@ -9,12 +9,16 @@ import HomeScreen5 from '../Screens/HomeScreen5';
 import ulxScreen from '../Screens/UlxScreen';
 import UlxSplash from '../Screens/UlxSplash';
 import BottomNavigation from './BottomNavigation';
+import HealthScreen from '../Screens/HealthScreen';
+import HealthScreen2 from '../Screens/HealthScreen2';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Health" component={HealthScreen} />
+        <Stack.Screen name="Health2" component={HealthScreen2} />
         <Stack.Screen name="TabNavigation" component={BottomNavigation} />
         <Stack.Screen name="UlxSplash" component={UlxSplash} />
         <Stack.Screen name="Ulx" component={ulxScreen} />

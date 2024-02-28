@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   productCard: {
     backgroundColor: Color.grayColor,
     flex: 1,
-    margin: 5,
+    marginVertical: 5,
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
