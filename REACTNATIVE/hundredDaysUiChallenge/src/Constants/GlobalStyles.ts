@@ -6,7 +6,7 @@ const GlobalStyles = StyleSheet.create({
   flexRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
+    gap: 5,
   },
   flexBetween: {
     flexDirection: 'row',
