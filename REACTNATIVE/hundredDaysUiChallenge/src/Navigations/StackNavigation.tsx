@@ -25,9 +25,11 @@ const StackNavigation: React.FC = () => {
 
         {/* day 004 */}
         {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
-        {/* created by @uiux_app_webdeveloper */}
+
         {/* day 005 */}
         <Stack.Screen name="Home" component={HomeScreen} />
+        {/* created by @uiux_app_webdeveloper */}
+        {/* day 006 */}
         <Stack.Screen name="Product" component={ProductScreen} />
       </Stack.Navigator>
     </NavigationContainer>

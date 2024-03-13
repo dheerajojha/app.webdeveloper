@@ -16,35 +16,66 @@ import GlobalColors from '../../Constants/GlobalColors';
 import Header from '../../Components/Day005/Header';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import GlobalStyles from '../../Constants/GlobalStyles';
+import {useNavigation} from '@react-navigation/native';
 const HomeScreen = () => {
+  const navigation: any = useNavigation();
   const [product, setProduct] = useState([
     {
       id: 1,
-      title: 'Segway',
+      title: 'Segway001',
+      description:
+        'The Mountain Speed Of Segway001 is 2.5 Miles Per Hour(20.1km/h). The Product is Capable Of Covering 100 Miles',
       category: 'smart Scooter',
       liked: false,
       image: require('../../Assets/Images/Day005/pic1.png'),
+      ratings: 4.3,
+      price: 20000,
+      wifi: 2.5,
+      battery: 4.4,
+      speed: 26,
     },
     {
       id: 2,
-      title: 'Segway',
+      title: 'Segway002',
       category: 'smart Scooter',
+      description:
+        'The Mountain Speed Of Segway002 is 2.5 Miles Per Hour(20.1km/h). The Product is Capable Of Covering 100 Miles',
       liked: false,
       image: require('../../Assets/Images/Day005/pic2.png'),
+      ratings: 4.5,
+      price: 24000,
+      wifi: 2.5,
+      battery: 4.7,
+      speed: 18,
     },
+
     {
       id: 3,
-      title: 'Segway',
+      title: 'Segway003',
+      description:
+        'The Mountain Speed Of Segway003 is 2.5 Miles Per Hour(20.1km/h). The Product is Capable Of Covering 100 Miles',
       category: 'smart Scooter',
       liked: false,
       image: require('../../Assets/Images/Day005/pic3.png'),
+      ratings: 4.8,
+      price: 24003,
+      wifi: 2.5,
+      battery: 4.1,
+      speed: 30,
     },
     {
       id: 4,
-      title: 'Segway',
+      title: 'Segway004',
+      description:
+        'The Mountain Speed Of Segway004 is 2.5 Miles Per Hour(20.1km/h). The Product is Capable Of Covering 100 Miles',
       category: 'smart Scooter',
       liked: false,
       image: require('../../Assets/Images/Day005/pic4.png'),
+      ratings: 4.9,
+      price: 12000,
+      wifi: 2.5,
+      battery: 4.9,
+      speed: 26,
     },
   ]);
 
@@ -81,7 +112,10 @@ const HomeScreen = () => {
           showsHorizontalScrollIndicator={false}
           data={product}
           renderItem={({item}) => (
-            <Pressable key={item.id} style={styles.cardContainer}>
+            <Pressable
+              key={item.id}
+              style={styles.cardContainer}
+              onPress={() => navigation.navigate('Product', {item})}>
               <TouchableOpacity
                 onPress={() => toggleLike(item.id)}
                 style={[
