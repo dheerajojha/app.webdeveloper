@@ -1,8 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import RegisterScreen from '../Screens/Day007/RegisterScreen.tsx';
-import LoginScreen from '../Screens/Day007/LoginScreen.tsx';
+import HomeScreen from '../Screens/Day008/HomeScreen.tsx';
+import DetailScreen from '../Screens/Day008/DetailScreen.tsx';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +11,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Register">
+        initialRouteName="Home">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -29,12 +29,17 @@ const StackNavigation: React.FC = () => {
         {/* day 005 */}
         {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
         {/* day 006 */}
+
         {/* <Stack.Screen name="Product" component={ProductScreen} /> */}
 
-        {/* created by @uiux_app_webdeveloper */}
         {/* day 007 */}
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
+        {/* <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} /> */}
+
+        {/* created by @uiux_app_webdeveloper */}
+        {/* day 008 */}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
