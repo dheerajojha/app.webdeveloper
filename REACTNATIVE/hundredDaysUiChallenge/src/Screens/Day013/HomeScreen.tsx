@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Dimensions,
   FlatList,
+  StatusBar,
 } from 'react-native';
 import React, {useState} from 'react';
 import Footer from '../../Components/Day013/Footer';
@@ -60,6 +61,10 @@ const HomeScreen: React.FC = () => {
   ]);
   return (
     <>
+      <StatusBar
+        backgroundColor={GlobalColors.whiteColor}
+        barStyle={'dark-content'}
+      />
       <SafeAreaView style={styles.homewrapper}>
         {/* header start */}
         <View style={GlobalStyles.flexBetween}>
