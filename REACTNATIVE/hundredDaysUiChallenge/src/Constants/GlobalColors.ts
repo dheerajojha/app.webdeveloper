@@ -1,8 +1,8 @@
 export default {
-  primaryColor: '#FFF3D3',
-  secondryColor: '#E3F9F6',
-  tertiaryColor: '#465262',
-  bgColor: '#29284D',
+  primaryColor: '#7964e3',
+  secondryColor: '#ff464e',
+  tertiaryColor: '#f4f5f9',
+  bgColor: '#f7f6fb',
   blueColor: '#1877F2',
   whiteColor: '#fff',
   blackColor: '#000',

@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day014/HomeScreen';
+import HomeScreen from '../Screens/Day015/HomeScreen';
+import BottomTabNavigation from './BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,7 +11,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="Home">
+        initialRouteName="BottomNavigation">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -51,9 +52,12 @@ const StackNavigation: React.FC = () => {
         {/* day 012 */}
         {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
 
-        {/* created by @uiux_app_webdeveloper */}
         {/* day 014 */}
-        <Stack.Screen name="Home" component={HomeScreen} />
+        {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+
+        {/* created by @uiux_app_webdeveloper */}
+        {/* day 015 */}
+        <Stack.Screen name="BottomNavigation" component={BottomTabNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
