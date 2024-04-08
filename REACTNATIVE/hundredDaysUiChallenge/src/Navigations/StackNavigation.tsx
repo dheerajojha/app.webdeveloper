@@ -1,8 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day015/HomeScreen';
 import BottomTabNavigation from './BottomTabNavigation';
+import ProductScreen from '../Screens/Day015/ProductScreen';
+import ProductDetailScreen from '../Screens/Day015/ProductDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,6 +59,11 @@ const StackNavigation: React.FC = () => {
         {/* created by @uiux_app_webdeveloper */}
         {/* day 015 */}
         <Stack.Screen name="BottomNavigation" component={BottomTabNavigation} />
+        <Stack.Screen name="ProductScreen" component={ProductScreen} />
+        <Stack.Screen
+          name="ProductDetailScreen"
+          component={ProductDetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

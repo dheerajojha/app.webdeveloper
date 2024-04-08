@@ -17,8 +17,10 @@ import FeatherIcon from 'react-native-vector-icons/Feather';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import FontIcon from 'react-native-vector-icons/Fontisto';
 import GlobalStyles from '../../Constants/GlobalStyles';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen: React.FC = () => {
+  const navigation: any = useNavigation();
   interface categoryType {
     image: string;
     title: string;
@@ -124,7 +126,10 @@ const HomeScreen: React.FC = () => {
           data={category}
           numColumns={2}
           renderItem={({item, index}) => (
-            <TouchableOpacity key={index} style={styles.card}>
+            <TouchableOpacity
+              key={index}
+              style={styles.card}
+              onPress={() => navigation.navigate('ProductScreen')}>
               <Image source={item.image} />
               <Text style={styles.h2}>{item.title}</Text>
               <View style={styles.textContainer}>
