@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import {
   SafeAreaView,
-  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -14,14 +13,22 @@ import {
 import React, {useState} from 'react';
 import GlobalColors from '../../Constants/GlobalColors';
 import AntIcon from 'react-native-vector-icons/AntDesign';
+import IonIcon from 'react-native-vector-icons/Ionicons';
 import FontIcon from 'react-native-vector-icons/Fontisto';
 import GlobalStyles from '../../Constants/GlobalStyles';
 import {useNavigation} from '@react-navigation/native';
 const {width, height} = Dimensions.get('window');
+import {useDispatch, useSelector} from 'react-redux';
+import {addToCart} from '../../Features/CartSlice';
 
 const ProductScreen: React.FC = () => {
+  const dispatch: any = useDispatch();
+  const cartItem = useSelector((state: any) => state.cart.cart);
+  console.log(cartItem);
+
   const navigation: any = useNavigation();
   interface productType {
+    id: number;
     image: string;
     title: string;
     category: string;
@@ -29,10 +36,12 @@ const ProductScreen: React.FC = () => {
     price: number;
     description: string;
     sliderImages?: any[];
+    quantity: number;
   }
 
   const [product, setProduct] = useState<productType[]>([
     {
+      id: 1,
       image: require('../../Assets/Images//Day015/pic7.png'),
       title: 'Sony Dr-ZX1AP',
       category: 'Headphones',
@@ -46,12 +55,13 @@ const ProductScreen: React.FC = () => {
         require('../../Assets/Images/Day015/pic24.webp'),
         require('../../Assets/Images/Day015/pic25.webp'),
       ],
-      description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
-      With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
+      description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
+      quantity: 0,
     },
 
     {
+      id: 2,
       image: require('../../Assets/Images//Day015/pic8.png'),
       title: 'Base QuietComfort',
       category: 'Headphones',
@@ -60,8 +70,10 @@ const ProductScreen: React.FC = () => {
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
+      quantity: 0,
     },
     {
+      id: 3,
       image: require('../../Assets/Images//Day015/pic9.png'),
       title: 'Beat XPro',
       category: 'Headphones',
@@ -70,8 +82,10 @@ const ProductScreen: React.FC = () => {
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
+      quantity: 0,
     },
     {
+      id: 4,
       image: require('../../Assets/Images//Day015/pic10.png'),
       title: 'Beat JPro',
       category: 'Headphones',
@@ -80,8 +94,10 @@ const ProductScreen: React.FC = () => {
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
+      quantity: 0,
     },
     {
+      id: 5,
       image: require('../../Assets/Images//Day015/pic11.png'),
       title: 'Beat SPro',
       category: 'Headphones',
@@ -90,9 +106,11 @@ const ProductScreen: React.FC = () => {
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
+      quantity: 0,
     },
 
     {
+      id: 6,
       image: require('../../Assets/Images//Day015/pic12.png'),
       title: 'Beat HPro',
       category: 'Headphones',
@@ -101,6 +119,7 @@ const ProductScreen: React.FC = () => {
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
+      quantity: 0,
     },
   ]);
   return (
@@ -108,11 +127,21 @@ const ProductScreen: React.FC = () => {
       <SafeAreaView style={styles.productWrapper}>
         {/* header start */}
 
-        <View style={{flexDirection: 'row', alignItems: 'center', gap: 90}}>
-          <View style={styles.iconContainer}>
+        <View style={GlobalStyles.flexBetween}>
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => navigation.goBack()}>
             <AntIcon name="left" size={20} color={GlobalColors.blackColor} />
-          </View>
+          </TouchableOpacity>
           <Text style={[styles.h1, {textAlign: 'center'}]}>Headphones</Text>
+          <View style={styles.iconContainer}>
+            <IonIcon name="cart" size={20} color={GlobalColors.blackColor} />
+            <View style={styles.notificationContainer}>
+              <Text style={{fontSize: 10, color: GlobalColors.whiteColor}}>
+                {cartItem.length}
+              </Text>
+            </View>
+          </View>
         </View>
 
         {/*search/filter start */}
@@ -142,9 +171,9 @@ const ProductScreen: React.FC = () => {
           showsVerticalScrollIndicator={false}
           data={product}
           numColumns={2}
-          renderItem={({item, index}) => (
+          renderItem={({item}) => (
             <TouchableOpacity
-              key={index}
+              key={item.id}
               style={styles.card}
               onPress={() =>
                 navigation.navigate('ProductDetailScreen', {item})
@@ -172,6 +201,7 @@ const ProductScreen: React.FC = () => {
                     name="plus"
                     size={20}
                     color={GlobalColors.whiteColor}
+                    onPress={() => dispatch(addToCart(item))}
                   />
                 </TouchableOpacity>
               </View>
@@ -212,6 +242,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+  },
+  notificationContainer: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    backgroundColor: GlobalColors.secondryColor,
+    borderRadius: 30,
+    width: 16,
+    height: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   searchContainer: {
     backgroundColor: 'white',
