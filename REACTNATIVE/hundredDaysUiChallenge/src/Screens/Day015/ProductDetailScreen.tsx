@@ -2,8 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
-  Image,
   Dimensions,
   StatusBar,
   TouchableOpacity,
