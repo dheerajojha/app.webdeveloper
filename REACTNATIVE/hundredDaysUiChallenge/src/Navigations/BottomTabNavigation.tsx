@@ -11,9 +11,11 @@ import AntIcon from 'react-native-vector-icons/AntDesign';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import FontIcon from 'react-native-vector-icons/FontAwesome';
 import GlobalColors from '../Constants/GlobalColors';
+import {useSelector} from 'react-redux';
 
 const Tabs = createBottomTabNavigator();
-const BottomTabNavigation = () => {
+const BottomTabNavigation: React.FC = () => {
+  const cartItem = useSelector((state: any) => state.cart.cart);
   return (
     <Tabs.Navigator
       screenOptions={{
@@ -58,13 +60,25 @@ const BottomTabNavigation = () => {
                   size={20}
                 />
                 <Text style={styles.iconLabel}>Cart</Text>
+                <View style={styles.notificationContainer}>
+                  <Text style={styles.notificationText}>{cartItem.length}</Text>
+                </View>
               </View>
             ) : (
-              <IonIcon
-                name="cart-outline"
-                color={GlobalColors.blackColor}
-                size={20}
-              />
+              <View style={{position: 'relative'}}>
+                <IonIcon
+                  name="cart-outline"
+                  color={GlobalColors.blackColor}
+                  size={20}
+                />
+                <View
+                  style={[
+                    styles.notificationContainer,
+                    {right: -15, top: -10},
+                  ]}>
+                  <Text style={styles.notificationText}>{cartItem.length}</Text>
+                </View>
+              </View>
             ),
         }}
       />
@@ -127,6 +141,18 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   iconLabel: {color: GlobalColors.whiteColor, fontWeight: '500'},
+  notificationContainer: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    backgroundColor: GlobalColors.secondryColor,
+    width: 18,
+    height: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
+  },
+  notificationText: {fontSize: 10, color: GlobalColors.whiteColor},
 });
 
 export default BottomTabNavigation;

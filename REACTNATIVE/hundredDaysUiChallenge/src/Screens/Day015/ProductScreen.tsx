@@ -24,7 +24,6 @@ import {addToCart} from '../../Features/CartSlice';
 const ProductScreen: React.FC = () => {
   const dispatch: any = useDispatch();
   const cartItem = useSelector((state: any) => state.cart.cart);
-  console.log(cartItem);
 
   const navigation: any = useNavigation();
   interface productType {
@@ -67,6 +66,14 @@ const ProductScreen: React.FC = () => {
       category: 'Headphones',
       wishlist: false,
       price: 19,
+      sliderImages: [
+        require('../../Assets/Images/Day015/pic20.webp'),
+        require('../../Assets/Images/Day015/pic21.webp'),
+        require('../../Assets/Images/Day015/pic22.webp'),
+        require('../../Assets/Images/Day015/pic23.webp'),
+        require('../../Assets/Images/Day015/pic24.webp'),
+        require('../../Assets/Images/Day015/pic25.webp'),
+      ],
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
@@ -79,6 +86,14 @@ const ProductScreen: React.FC = () => {
       category: 'Headphones',
       wishlist: false,
       price: 16,
+      sliderImages: [
+        require('../../Assets/Images/Day015/pic20.webp'),
+        require('../../Assets/Images/Day015/pic21.webp'),
+        require('../../Assets/Images/Day015/pic22.webp'),
+        require('../../Assets/Images/Day015/pic23.webp'),
+        require('../../Assets/Images/Day015/pic24.webp'),
+        require('../../Assets/Images/Day015/pic25.webp'),
+      ],
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
@@ -91,6 +106,14 @@ const ProductScreen: React.FC = () => {
       category: 'Headphones',
       wishlist: false,
       price: 10,
+      sliderImages: [
+        require('../../Assets/Images/Day015/pic20.webp'),
+        require('../../Assets/Images/Day015/pic21.webp'),
+        require('../../Assets/Images/Day015/pic22.webp'),
+        require('../../Assets/Images/Day015/pic23.webp'),
+        require('../../Assets/Images/Day015/pic24.webp'),
+        require('../../Assets/Images/Day015/pic25.webp'),
+      ],
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
@@ -103,6 +126,14 @@ const ProductScreen: React.FC = () => {
       category: 'Headphones',
       wishlist: false,
       price: 20,
+      sliderImages: [
+        require('../../Assets/Images/Day015/pic20.webp'),
+        require('../../Assets/Images/Day015/pic21.webp'),
+        require('../../Assets/Images/Day015/pic22.webp'),
+        require('../../Assets/Images/Day015/pic23.webp'),
+        require('../../Assets/Images/Day015/pic24.webp'),
+        require('../../Assets/Images/Day015/pic25.webp'),
+      ],
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
@@ -116,6 +147,14 @@ const ProductScreen: React.FC = () => {
       category: 'Headphones',
       wishlist: false,
       price: 21,
+      sliderImages: [
+        require('../../Assets/Images/Day015/pic20.webp'),
+        require('../../Assets/Images/Day015/pic21.webp'),
+        require('../../Assets/Images/Day015/pic22.webp'),
+        require('../../Assets/Images/Day015/pic23.webp'),
+        require('../../Assets/Images/Day015/pic24.webp'),
+        require('../../Assets/Images/Day015/pic25.webp'),
+      ],
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
@@ -243,17 +282,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 10,
   },
-  notificationContainer: {
-    position: 'absolute',
-    right: 0,
-    top: 0,
-    backgroundColor: GlobalColors.secondryColor,
-    borderRadius: 30,
-    width: 16,
-    height: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
   searchContainer: {
     backgroundColor: 'white',
     padding: 5,

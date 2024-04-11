@@ -16,8 +16,13 @@ import EntIcon from 'react-native-vector-icons/Entypo';
 import {SliderBox} from 'react-native-image-slider-box';
 import GlobalStyles from '../../Constants/GlobalStyles';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+import {incrementQuantity} from '../../Features/CartSlice';
 
 const ProductDetailScreen: React.FC = () => {
+  const dispatch: any = useDispatch();
+  const cartItem = useSelector((state: any) => state.cart.cart);
+  console.log(cartItem);
   const navigation: any = useNavigation();
   const route: any = useRoute();
   const items = route.params.item;
@@ -79,9 +84,13 @@ const ProductDetailScreen: React.FC = () => {
                 <TouchableOpacity style={styles.iconContainer}>
                   <EntIcon name="minus" size={24} />
                 </TouchableOpacity>
-                <Text>1</Text>
+                <Text>{cartItem[items.id]?.quantity}</Text>
                 <TouchableOpacity style={styles.iconContainer}>
-                  <EntIcon name="plus" size={24} />
+                  <EntIcon
+                    name="plus"
+                    size={24}
+                    onPress={() => dispatch(incrementQuantity(items))}
+                  />
                 </TouchableOpacity>
               </View>
             </View>

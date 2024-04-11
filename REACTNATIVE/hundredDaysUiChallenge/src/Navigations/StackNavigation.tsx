@@ -59,12 +59,16 @@ const StackNavigation: React.FC = () => {
         {/* day 015 */}
         <Stack.Screen name="BottomNavigation" component={BottomTabNavigation} />
         {/* day 016 */}
-        {/* created by @uiux_app_webdeveloper */}
+
         <Stack.Screen name="ProductScreen" component={ProductScreen} />
+        {/* day 017 */}
         <Stack.Screen
           name="ProductDetailScreen"
           component={ProductDetailScreen}
         />
+        {/* created by @uiux_app_webdeveloper */}
+        {/* day 018 */}
+        {/* cart / wishlist */}
       </Stack.Navigator>
     </NavigationContainer>
   );
