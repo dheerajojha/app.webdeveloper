@@ -16,6 +16,7 @@ import {useSelector} from 'react-redux';
 const Tabs = createBottomTabNavigator();
 const BottomTabNavigation: React.FC = () => {
   const cartItem = useSelector((state: any) => state.cart.cart);
+  const wishlistItem = useSelector((state: any) => state.wishlist.wishlist);
   return (
     <Tabs.Navigator
       screenOptions={{
@@ -89,19 +90,35 @@ const BottomTabNavigation: React.FC = () => {
           tabBarIcon: ({focused}) =>
             focused ? (
               <View style={styles.iconContainer}>
-                <IonIcon
+                <AntIcon
                   name="heart"
                   color={GlobalColors.whiteColor}
                   size={20}
                 />
-                <Text style={styles.iconLabel}>Heart</Text>
+                <Text style={styles.iconLabel}>Cart</Text>
+                <View style={styles.notificationContainer}>
+                  <Text style={styles.notificationText}>
+                    {wishlistItem.length}
+                  </Text>
+                </View>
               </View>
             ) : (
-              <AntIcon
-                name="hearto"
-                color={GlobalColors.blackColor}
-                size={20}
-              />
+              <View style={{position: 'relative'}}>
+                <AntIcon
+                  name="hearto"
+                  color={GlobalColors.blackColor}
+                  size={20}
+                />
+                <View
+                  style={[
+                    styles.notificationContainer,
+                    {right: -15, top: -10},
+                  ]}>
+                  <Text style={styles.notificationText}>
+                    {wishlistItem.length}
+                  </Text>
+                </View>
+              </View>
             ),
         }}
       />

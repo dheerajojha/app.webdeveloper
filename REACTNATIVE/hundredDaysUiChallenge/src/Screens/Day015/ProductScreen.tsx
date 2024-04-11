@@ -20,10 +20,14 @@ import {useNavigation} from '@react-navigation/native';
 const {width, height} = Dimensions.get('window');
 import {useDispatch, useSelector} from 'react-redux';
 import {addToCart} from '../../Features/CartSlice';
+import {showMessage} from 'react-native-flash-message';
+import {addToWishlist} from '../../Features/WishlistSlice';
 
 const ProductScreen: React.FC = () => {
   const dispatch: any = useDispatch();
   const cartItem = useSelector((state: any) => state.cart.cart);
+  const wishlistItem = useSelector((state: any) => state.wishlist.wishlist);
+  console.log(wishlistItem);
 
   const navigation: any = useNavigation();
   interface productType {
@@ -173,14 +177,17 @@ const ProductScreen: React.FC = () => {
             <AntIcon name="left" size={20} color={GlobalColors.blackColor} />
           </TouchableOpacity>
           <Text style={[styles.h1, {textAlign: 'center'}]}>Headphones</Text>
-          <View style={styles.iconContainer}>
+
+          <TouchableOpacity
+            style={styles.iconContainer}
+            onPress={() => navigation.navigate('CartScreen')}>
             <IonIcon name="cart" size={20} color={GlobalColors.blackColor} />
-            <View style={styles.notificationContainer}>
+            <TouchableOpacity style={styles.notificationContainer}>
               <Text style={{fontSize: 10, color: GlobalColors.whiteColor}}>
                 {cartItem.length}
               </Text>
-            </View>
-          </View>
+            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
 
         {/*search/filter start */}
@@ -200,7 +207,7 @@ const ProductScreen: React.FC = () => {
           </View>
         </View>
 
-        {/*category  card start */}
+        {/*Product card start */}
         <View style={GlobalStyles.flexRow}>
           <Text style={styles.h2}>Got Delivered</Text>
           <Text>Every Headphone</Text>
@@ -211,20 +218,31 @@ const ProductScreen: React.FC = () => {
           data={product}
           numColumns={2}
           renderItem={({item}) => (
-            <TouchableOpacity
-              key={item.id}
-              style={styles.card}
-              onPress={() =>
-                navigation.navigate('ProductDetailScreen', {item})
-              }>
+            <View key={item.id} style={styles.card}>
               <AntIcon
                 name="heart"
                 style={{textAlign: 'right'}}
                 size={16}
-                color={GlobalColors.grayColor}
+                color={
+                  wishlistItem.length > 0
+                    ? GlobalColors.secondryColor
+                    : GlobalColors.grayColor
+                }
+                onPress={() => {
+                  dispatch(addToWishlist(item));
+                  showMessage({
+                    type: 'success',
+                    message: `${item.title} Added To Wishlist`,
+                  });
+                }}
               />
               <Image source={item.image} />
-              <Text style={styles.h2}>{item.title}</Text>
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('ProductDetailScreen', {item})
+                }>
+                <Text style={styles.h2}>{item.title}</Text>
+              </TouchableOpacity>
               <View>
                 <Text>{item.category}</Text>
               </View>
@@ -240,11 +258,17 @@ const ProductScreen: React.FC = () => {
                     name="plus"
                     size={20}
                     color={GlobalColors.whiteColor}
-                    onPress={() => dispatch(addToCart(item))}
+                    onPress={() => {
+                      dispatch(addToCart(item));
+                      showMessage({
+                        type: 'success',
+                        message: `${item.title} Added to Cart`,
+                      });
+                    }}
                   />
                 </TouchableOpacity>
               </View>
-            </TouchableOpacity>
+            </View>
           )}
         />
       </SafeAreaView>

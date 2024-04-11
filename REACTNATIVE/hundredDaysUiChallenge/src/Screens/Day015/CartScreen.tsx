@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   Image,
   Dimensions,
-  Pressable,
 } from 'react-native';
 import React from 'react';
 import GlobalColors from '../../Constants/GlobalColors';
@@ -17,19 +16,20 @@ import EntIcon from 'react-native-vector-icons/Entypo';
 import GlobalStyles from '../../Constants/GlobalStyles';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
+import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
 import {
   clearCart,
   decrementQuantity,
   incrementQuantity,
+  removeFromCart,
 } from '../../Features/CartSlice';
 import LottieView from 'lottie-react-native';
+import {showMessage} from 'react-native-flash-message';
 const {width, height} = Dimensions.get('window');
 
 const ProductScreen: React.FC = () => {
   const dispatch: any = useDispatch();
   const cartItem = useSelector((state: any) => state.cart.cart);
-  console.log(cartItem);
-
   const navigation: any = useNavigation();
 
   return (
@@ -50,53 +50,69 @@ const ProductScreen: React.FC = () => {
         <FlatList
           data={cartItem}
           renderItem={({item}) => (
-            <Pressable style={styles.card}>
-              <View style={styles.image}>
-                <Image
-                  source={item.image}
-                  style={{height: 100, width: 100, objectFit: 'contain'}}
-                />
-              </View>
-              <View style={{gap: 10}}>
-                <Text style={styles.h2}>{item.title}</Text>
-                <Text>{item.category}</Text>
-                {/* price start */}
-
-                <View style={[GlobalStyles.flexBetween, {gap: 90}]}>
-                  <View>
-                    <Text style={styles.h2}>${item.price}</Text>
+            <GestureHandlerRootView>
+              <Swipeable
+                renderRightActions={() => (
+                  <TouchableOpacity
+                    style={styles.removeContainer}
+                    onPress={() => dispatch(removeFromCart(item))}>
+                    <AntIcon
+                      name="delete"
+                      size={20}
+                      color={GlobalColors.whiteColor}
+                    />
+                  </TouchableOpacity>
+                )}>
+                <View style={styles.card} key={item.id}>
+                  <View style={styles.image}>
+                    <Image
+                      source={item.image}
+                      style={{height: 100, width: 100, objectFit: 'contain'}}
+                    />
                   </View>
-                  <View style={[GlobalStyles.flexRow, {gap: 15}]}>
-                    <TouchableOpacity
-                      style={[
-                        styles.iconContainer,
-                        {backgroundColor: GlobalColors.grayColor},
-                      ]}
-                      onPress={() => dispatch(decrementQuantity(item))}>
-                      <EntIcon name="minus" size={24} />
-                    </TouchableOpacity>
-                    <Text>{item.quantity}</Text>
-                    <TouchableOpacity
-                      style={[
-                        styles.iconContainer,
-                        {backgroundColor: GlobalColors.primaryColor},
-                      ]}>
-                      <EntIcon
-                        name="plus"
-                        size={24}
-                        onPress={() => dispatch(incrementQuantity(item))}
-                        color={GlobalColors.whiteColor}
-                      />
-                    </TouchableOpacity>
+                  <View style={{gap: 10}}>
+                    <Text style={styles.h2}>{item.title}</Text>
+                    <Text>{item.category}</Text>
+                    {/* price start */}
+
+                    <View style={[GlobalStyles.flexBetween, {gap: 90}]}>
+                      <View>
+                        <Text style={styles.h2}>${item.price}</Text>
+                      </View>
+                      <View style={[GlobalStyles.flexRow, {gap: 15}]}>
+                        <TouchableOpacity
+                          style={[
+                            styles.iconContainer,
+                            {backgroundColor: GlobalColors.grayColor},
+                          ]}
+                          onPress={() => dispatch(decrementQuantity(item))}>
+                          <EntIcon name="minus" size={24} />
+                        </TouchableOpacity>
+                        <Text>{item.quantity}</Text>
+                        <TouchableOpacity
+                          style={[
+                            styles.iconContainer,
+                            {backgroundColor: GlobalColors.primaryColor},
+                          ]}>
+                          <EntIcon
+                            name="plus"
+                            size={24}
+                            onPress={() => dispatch(incrementQuantity(item))}
+                            color={GlobalColors.whiteColor}
+                          />
+                        </TouchableOpacity>
+                      </View>
+                    </View>
                   </View>
                 </View>
-              </View>
-            </Pressable>
+              </Swipeable>
+            </GestureHandlerRootView>
           )}
         />
 
         {cartItem.length > 0 ? (
           <>
+            {/* // before empty cart */}
             <View
               style={[
                 GlobalStyles.flexBetween,
@@ -108,6 +124,7 @@ const ProductScreen: React.FC = () => {
               <Text style={styles.h2}>Cart Total</Text>
               <Text style={styles.h2}>$35</Text>
             </View>
+
             <TouchableOpacity
               style={styles.cta}
               onPress={() => dispatch(clearCart())}>
@@ -118,6 +135,7 @@ const ProductScreen: React.FC = () => {
             </TouchableOpacity>
           </>
         ) : (
+          // after empty cart
           <View style={{alignItems: 'center'}}>
             <LottieView
               source={require('../../Assets/Animations/emptycart.json')}
@@ -131,8 +149,8 @@ const ProductScreen: React.FC = () => {
 
         <TouchableOpacity
           style={[styles.cta, {backgroundColor: GlobalColors.primaryColor}]}
-          onPress={() => dispatch(clearCart())}>
-          <Text style={styles.ctaText}>Checkout</Text>
+          onPress={() => navigation.navigate('ProductScreen')}>
+          <Text style={styles.ctaText}>Add Product</Text>
         </TouchableOpacity>
       </SafeAreaView>
     </>
@@ -157,6 +175,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+  },
+  removeContainer: {
+    width: 100,
+    height: '88%',
+    backgroundColor: GlobalColors.secondryColor,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
   },
 
   card: {
