@@ -24,10 +24,10 @@ import {showMessage} from 'react-native-flash-message';
 import {addToWishlist} from '../../Features/WishlistSlice';
 
 const ProductScreen: React.FC = () => {
+  const [wishButton, setWishButton] = useState<boolean>(false);
   const dispatch: any = useDispatch();
   const cartItem = useSelector((state: any) => state.cart.cart);
   const wishlistItem = useSelector((state: any) => state.wishlist.wishlist);
-  console.log(wishlistItem);
 
   const navigation: any = useNavigation();
   interface productType {
@@ -40,6 +40,7 @@ const ProductScreen: React.FC = () => {
     description: string;
     sliderImages?: any[];
     quantity: number;
+    wish: boolean;
   }
 
   const [product, setProduct] = useState<productType[]>([
@@ -61,6 +62,7 @@ const ProductScreen: React.FC = () => {
       description: `Probuds N31 offers a massive playbacktime of 45+ hours on a single full charge with type-c charging. Thanks to its 280mAh big battery With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
       quantity: 0,
+      wish: false,
     },
 
     {
@@ -82,6 +84,7 @@ const ProductScreen: React.FC = () => {
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
       quantity: 0,
+      wish: false,
     },
     {
       id: 3,
@@ -102,6 +105,7 @@ const ProductScreen: React.FC = () => {
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
       quantity: 0,
+      wish: false,
     },
     {
       id: 4,
@@ -122,6 +126,7 @@ const ProductScreen: React.FC = () => {
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
       quantity: 0,
+      wish: false,
     },
     {
       id: 5,
@@ -142,6 +147,7 @@ const ProductScreen: React.FC = () => {
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
       quantity: 0,
+      wish: false,
     },
 
     {
@@ -163,8 +169,22 @@ const ProductScreen: React.FC = () => {
       With Fast charge technology, get 12 hours of playtime in just 10 minutes of charge, so get yourself ready to flip through your favourite play list Equipped with Environmental Noise Cancellation feature that helps to capture your voice without background noise and your voice will be heard crystal clear
       Comes with Pro Game Mode that enables user live a lag free life by significantly reducing the delay with the latency as low as 60ms, thereby providing near perfect audio to video sync for an enhanced gaming experience`,
       quantity: 0,
+      wish: false,
     },
   ]);
+
+  const handlerWishlist = (item: any) => {
+    dispatch(addToWishlist(item));
+    showMessage({
+      type: 'success',
+      message: `${item.title} Added To Wishlist`,
+    });
+
+    // wishlistItem.map((value: any) =>
+    //   value.id === item.id ? {...value, wish: !value.wish} : value,
+    // );
+  };
+
   return (
     <>
       <SafeAreaView style={styles.productWrapper}>
@@ -224,16 +244,12 @@ const ProductScreen: React.FC = () => {
                 style={{textAlign: 'right'}}
                 size={16}
                 color={
-                  wishlistItem.length > 0
+                  item.wish
                     ? GlobalColors.secondryColor
                     : GlobalColors.grayColor
                 }
                 onPress={() => {
-                  dispatch(addToWishlist(item));
-                  showMessage({
-                    type: 'success',
-                    message: `${item.title} Added To Wishlist`,
-                  });
+                  handlerWishlist(item);
                 }}
               />
               <Image source={item.image} />

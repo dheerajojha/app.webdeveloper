@@ -70,7 +70,7 @@ const StackNavigation: React.FC = () => {
 
         {/* day 018 */}
         {/* created by @uiux_app_webdeveloper */}
-        {/* cart / wishlist */}
+        {/* cart */}
         <Stack.Screen name="CartScreen" component={CartScreen} />
       </Stack.Navigator>
     </NavigationContainer>
