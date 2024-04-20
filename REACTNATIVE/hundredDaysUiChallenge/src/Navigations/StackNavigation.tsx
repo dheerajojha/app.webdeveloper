@@ -1,10 +1,10 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import BottomTabNavigation from './BottomTabNavigation';
-import ProductScreen from '../Screens/Day015/ProductScreen';
-import ProductDetailScreen from '../Screens/Day015/ProductDetailScreen';
-import CartScreen from '../Screens/Day015/CartScreen';
+import BottomTabNavigation from './Day021/BottomTabNavigation';
+// import ProductScreen from '../Screens/Day015/ProductScreen';
+// import ProductDetailScreen from '../Screens/Day015/ProductDetailScreen';
+// import CartScreen from '../Screens/Day015/CartScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -58,20 +58,23 @@ const StackNavigation: React.FC = () => {
         {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
 
         {/* day 015 */}
-        <Stack.Screen name="BottomNavigation" component={BottomTabNavigation} />
+        {/* <Stack.Screen name="BottomNavigation" component={BottomTabNavigation} /> */}
         {/* day 016 */}
 
-        <Stack.Screen name="ProductScreen" component={ProductScreen} />
+        {/* <Stack.Screen name="ProductScreen" component={ProductScreen} /> */}
         {/* day 017 */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="ProductDetailScreen"
           component={ProductDetailScreen}
-        />
+        /> */}
 
         {/* day 018 */}
-        {/* created by @uiux_app_webdeveloper */}
         {/* cart */}
-        <Stack.Screen name="CartScreen" component={CartScreen} />
+        {/* <Stack.Screen name="CartScreen" component={CartScreen} /> */}
+
+        {/* created by @app.webdeveloper */}
+        {/* day 021 */}
+        <Stack.Screen name="BottomNavigation" component={BottomTabNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
