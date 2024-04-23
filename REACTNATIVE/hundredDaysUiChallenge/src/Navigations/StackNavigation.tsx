@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import BottomTabNavigation from './Day021/BottomTabNavigation';
+import BottomTabNavigation from './Day022/BottomTabNavigation';
 // import ProductScreen from '../Screens/Day015/ProductScreen';
 // import ProductDetailScreen from '../Screens/Day015/ProductDetailScreen';
 // import CartScreen from '../Screens/Day015/CartScreen';
