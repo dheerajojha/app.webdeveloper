@@ -32,7 +32,7 @@ const RegisterScreen = () => {
             style={styles.image}
           />
           <View style={styles.absoluteText}>
-            <Text style={styles.h1}>Sign In</Text>
+            <Text style={styles.h1}>Sign Up</Text>
             <Text style={styles.h1}>Options</Text>
           </View>
         </View>
@@ -48,7 +48,7 @@ const RegisterScreen = () => {
             style={[styles.cta, {backgroundColor: GlobalColors.tertiaryColor}]}>
             <AntIcon name="google" size={22} color={GlobalColors.blackColor} />
             <Text style={[styles.ctaText, {color: GlobalColors.blackColor}]}>
-              Sign In with Google
+              Sign Up with Google
             </Text>
           </TouchableOpacity>
 
@@ -60,7 +60,7 @@ const RegisterScreen = () => {
               color={GlobalColors.blackColor}
             />
             <Text style={[styles.ctaText, {color: GlobalColors.blackColor}]}>
-              Sign In with Facebook
+              Sign Up with Facebook
             </Text>
           </TouchableOpacity>
 
@@ -69,7 +69,7 @@ const RegisterScreen = () => {
             <Text
               style={{color: GlobalColors.primaryColor, fontWeight: '600'}}
               onPress={() => navigation.navigate('LoginScreen')}>
-              Sign up
+              Sign In
             </Text>
           </Text>
         </View>
