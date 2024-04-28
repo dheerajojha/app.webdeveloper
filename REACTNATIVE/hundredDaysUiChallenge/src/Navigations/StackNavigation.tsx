@@ -4,7 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 // import BottomTabNavigation from './Day022/BottomTabNavigation';
 // import RegisterScreen from '../Screens/Day023/RegisterScreen';
 // import LoginScreen from '../Screens/Day023/LoginScreen';
-import HomeScreen from '../Screens/Day023/HomeScreen';
+import RegisterScreen from '../Screens/Day024/RegisterScreen';
+import LoginScreen from '../Screens/Day024/LoginScreen';
 // import ProductScreen from '../Screens/Day015/ProductScreen';
 // import ProductDetailScreen from '../Screens/Day015/ProductDetailScreen';
 // import CartScreen from '../Screens/Day015/CartScreen';
@@ -16,7 +17,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="BottomNavigation">
+        initialRouteName="RegisterScreen">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -85,7 +86,8 @@ const StackNavigation: React.FC = () => {
         <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
 
         {/* created by @app.webdeveloper */}
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
