@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000527034316",
+    "project_id": "fir-88200",
+    "storage_bucket": "fir-88200.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000527034316:android:4c6213e965da08642d8f69",
+        "android_client_info": {
+          "package_name": "com.hundreddaysuichallenge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_IuBx-q_eP8C6UcKy90dPqmzGJD6gkQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,4 +9,5 @@ export default {
   whiteColor: '#fff',
   blackColor: '#000',
   grayColor: '#dedede',
+  greenColor: '#1CB273',
 };
