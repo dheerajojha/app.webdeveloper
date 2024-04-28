@@ -4,10 +4,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Color from '../Utils/Color';
 import {useNavigation} from '@react-navigation/native';
 const UlxSplash = () => {
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Ulx');
+      navigation.navigate('TabNavigation');
     }, 1000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

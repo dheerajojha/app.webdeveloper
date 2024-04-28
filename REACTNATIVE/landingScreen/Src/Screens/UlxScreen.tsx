@@ -12,6 +12,7 @@ import {React, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import Color from '../Utils/Color';
+import {useSelector} from 'react-redux';
 const UlxScreen: React.FC = () => {
   type categoryType = {
     icon: string;
@@ -67,6 +68,9 @@ const UlxScreen: React.FC = () => {
     },
   ]);
 
+  const s = useSelector(state => state.product);
+  console.log(s);
+
   return (
     <SafeAreaView style={styles.ulxWrapper}>
       <Text style={styles.h1}>ULX Here</Text>
@@ -96,16 +100,13 @@ const UlxScreen: React.FC = () => {
       </View>
 
       <FlatList
-        data={product}
+        data={s.product}
         renderItem={({item}) => (
           <Pressable style={styles.productCard}>
-            <Image
-              source={require('../Assets/Images/image.png')}
-              style={{width: 80, height: 80}}
-            />
+            <Image source={{uri: item.image}} style={{width: 80, height: 80}} />
             <View style={{gap: 3}}>
               <Text style={styles.h2}>{item.name}</Text>
-              <Text style={styles.h4}>{item.description}</Text>
+              <Text style={styles.h4}>{item.des}</Text>
               <Text style={[styles.h2, {color: 'green'}]}>
                 INR {item.price}
               </Text>

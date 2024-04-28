@@ -21,6 +21,7 @@ const productSlice = createSlice({
   reducers: {
     addProduct(state, action) {
       state.product.push(action.payload);
+      state.success = true;
     },
   },
 });

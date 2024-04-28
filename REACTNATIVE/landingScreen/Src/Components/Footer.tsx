@@ -24,7 +24,7 @@ const Footer = () => {
     {
       name: 'UlxScreen',
       iconName: 'home',
-      path: 'Ulx',
+      path: 'Home',
       size: 22,
       color: '',
     },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   footerWrapper: {
     position: 'absolute',
     bottom: 10,
-    right: 30,
+    left: 20,
     width: '90%',
     backgroundColor: Color.whiteColor,
     borderRadius: 10,
