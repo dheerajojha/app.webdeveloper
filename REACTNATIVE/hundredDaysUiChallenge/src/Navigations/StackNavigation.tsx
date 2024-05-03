@@ -1,10 +1,11 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../Screens/Day025/HomeScreen';
+import SingleScreen from '../Screens/Day025/SingleScreen';
 // import BottomTabNavigation from './Day022/BottomTabNavigation';
-// import RegisterScreen from '../Screens/Day023/RegisterScreen';
-// import LoginScreen from '../Screens/Day023/LoginScreen';
+// import RegisterScreen from '../Screens/Day024/RegisterScreen';
+// import LoginScreen from '../Screens/Day024/LoginScreen';
 // import RegisterScreen from '../Screens/Day024/RegisterScreen';
 // import LoginScreen from '../Screens/Day024/LoginScreen';
 // import ProductScreen from '../Screens/Day015/ProductScreen';
@@ -17,8 +18,8 @@ const StackNavigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{headerShown: false}}
-        initialRouteName="RegisterScreen">
+        screenOptions={{ headerShown: false }}
+        initialRouteName="HomeScreen">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -82,13 +83,13 @@ const StackNavigation: React.FC = () => {
 
         {/* day 023 */}
         {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} /> */}
+        <Stack.Screen name="LoginScreen" component={LoginScreen} /> */}
 
-           {/* day 025 */}
+        {/* day 025 */}
 
-  {/* created by @app.webdeveloper */}
+        {/* created by @app.webdeveloper */}
         <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+        <Stack.Screen name="SingleScreen" component={SingleScreen}/>
 
       </Stack.Navigator>
     </NavigationContainer>
