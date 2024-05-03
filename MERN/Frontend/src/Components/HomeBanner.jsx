@@ -5,28 +5,42 @@ import { Link } from "react-router-dom"
 const HomeBanner = () => {
   return (
     <HomeBannerWrapper>
-        <article>
-          <h1> Raining Offers For Hot Summer!</h1>
-          <h3>25% Off On All Products</h3>
-          <div className="buttons gap">
-            <Link className='cta-white'>Shop Now</Link>
-            <Link className='cta-transparent'>Shop Now</Link>
-          </div>
-        </article>
+      <article className='gap'>
+        <h1> Raining Offers For Hot Summer!</h1>
+        <h3>25% Off On All Products</h3>
+        <div className="buttons flexRow">
+          <Link className='cta-white'>Shop Now</Link>
+          <Link className='cta-transparent'>Shop Now</Link>
+        </div>
+      </article>
     </HomeBannerWrapper>
   )
 }
 
 const HomeBannerWrapper = styled.section`
-background-image:url(${bgImg});
+  background: 
+    linear-gradient(
+      rgba(0, 106, 255, 0.45), 
+      rgba(54, 134, 204, 0.45)
+    ),
+    url(${bgImg});
 height:100vh;
 width:100%;
-background-position:'center';
-background-size:'cover';
-display:'flex';
-justify-content:'center';
-align-items:'center';
-
+background-position:center;
+background-attachment:fixed;
+background-size:cover;
+display:flex;
+align-items:center;
+article{
+  width:50%;
+  color:var(--whiteColor);
+}
+@media screen and (max-width:768px) {
+  article{
+  width:90%;
+}
+  
+}
 `
 
 export default HomeBanner
