@@ -19,6 +19,7 @@
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-decoration: none;
+  list-style: none;
 }
 
 
@@ -52,6 +53,11 @@ section {
   padding: 50px 8%;
 }
 
+footer {
+  padding: 20px 8%;
+}
+
+
 .gap {
   display: flex;
   flex-direction: column;
@@ -63,6 +69,12 @@ section {
   align-items: center;
   gap: 1rem;
 
+}
+
+.flexBetween{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
 }
 
 
@@ -85,4 +97,10 @@ section {
   background-color: var(--primaryColor);
   color: var(--whiteColor);
   border-radius: 2px;
+}
+
+input{
+  padding:.8rem;
+  outline:none;
+  border:1px solid var(--grayColor);
 }
