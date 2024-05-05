@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {HomeBanner,CategoryCard, ProductCard, Special } from '../Components';
-import {asset25,asset26,asset27} from "../assets"
+import {asset25,asset26,asset27,asset9,asset10,asset11,asset12,asset13,asset14,asset15,asset16,asset17} from "../assets";
 const Home = () => {
   const [category,setCategory]=useState([{
     title:"Mens",
@@ -22,7 +22,7 @@ const Home = () => {
   const [product,setProduct]=useState([{
     title:"Mens Luxury Shoes",
     category:'Mens',
-    image:asset25,
+    image:asset9,
     price:2000,
     description:'All About Mens Wear',
     rating:3.5,
@@ -30,7 +30,7 @@ const Home = () => {
   {
     title:"Mens Luxury Shoes",
     category:'Mens',
-    image:asset25,
+    image:asset10,
     price:2000,
     description:'All About Mens Wear',
     rating:3.5,
@@ -38,7 +38,7 @@ const Home = () => {
   {
     title:"Women Luxury Shoes",
     category:'Women',
-    image:asset25,
+    image:asset11,
     price:1999,
     description:'All About Mens Wear',
     rating:3.5,
@@ -46,7 +46,7 @@ const Home = () => {
   {
     title:"Mens Luxury Shoes",
     category:'Mens',
-    image:asset25,
+    image:asset12,
     price:2000,
     description:'All About Mens Wear',
     rating:3.5,
@@ -55,7 +55,7 @@ const Home = () => {
   {
     title:"Mens Luxury Shoes",
     category:'Mens',
-    image:asset25,
+    image:asset13,
     price:2000,
     description:'All About Mens Wear',
     rating:3.5,
@@ -63,7 +63,7 @@ const Home = () => {
   {
     title:"Mens Luxury Shoes",
     category:'Mens',
-    image:asset25,
+    image:asset14,
     price:2000,
     description:'All About Mens Wear',
     rating:3.5,
@@ -71,7 +71,7 @@ const Home = () => {
   {
     title:"Women Luxury Shoes",
     category:'Women',
-    image:asset25,
+    image:asset15,
     price:1999,
     description:'All About Mens Wear',
     rating:3.5,
@@ -79,8 +79,24 @@ const Home = () => {
   {
     title:"Mens Luxury Shoes",
     category:'Mens',
-    image:asset25,
+    image:asset16,
     price:2000,
+    description:'All About Mens Wear',
+    rating:3.5,
+  },
+  {
+    title:"Mens Luxury Shoes",
+    category:'Mens',
+    image:asset17,
+    price:2000,
+    description:'All About Mens Wear',
+    rating:3.5,
+  },
+  {
+    title:"Women Luxury Shoes",
+    category:'Women',
+    image:asset15,
+    price:2999,
     description:'All About Mens Wear',
     rating:3.5,
   },

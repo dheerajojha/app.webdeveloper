@@ -31,23 +31,14 @@ const ProductCard = ({ data }) => {
 const ProductCardWrapper = styled.section`
 .card-container{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    /* justify-content:center; */
-    gap:1rem;
+    grid-template-columns:repeat(auto-fit,minmax(200px,auto));
+    justify-content:center;
+    gap:2rem;
     img{
-        width:300px;
-        height:300px;
+        width:100%;
+        height:auto;
         border-radius:5px;
     }
-  
 }
-@media screen and (max-width:768px) {
-        .card-container{
-            grid-template-columns:1fr;
-        }
-    }
-
-
 `
-
 export default ProductCard

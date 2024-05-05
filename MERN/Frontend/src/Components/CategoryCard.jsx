@@ -26,9 +26,9 @@ const CategoryCard = ({ data }) => {
 const CategoryCardContainer = styled.section`
 .card-container{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(auto-fit,minmax(300px,auto));
 justify-content:center;
-gap:1rem;
+gap:2rem;
 .card{
     position:relative;
     color:var(--whiteColor);
@@ -42,7 +42,7 @@ gap:1rem;
             background-color:rgba(0,0,0,0.2);
         }
     img{
-        width:400px;
+        width:100%;
         height:500px;
         object-fit:cover;
         border-radius:5px;
@@ -57,11 +57,5 @@ gap:1rem;
 }
 }
 
-@media screen and (max-width:768px) {
-    .card-container{
-        grid-template-columns:1fr;
-    }
-    
-}
 `
 export default CategoryCard
