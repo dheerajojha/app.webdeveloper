@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View,Dimensions, StatusBar,TouchableOpacity } from 'react-native'
+import { Image, StyleSheet, Text, View,Dimensions, StatusBar,TouchableOpacity, Pressable } from 'react-native'
 import React from 'react'
 import {useRoute,useNavigation} from "@react-navigation/native";
 import AntIcon from "react-native-vector-icons/AntDesign";
@@ -19,7 +19,9 @@ const SingleScreen:React.FC = () => {
     <View style={styles.singleScreenWrapper}>
         <View style={{position:'relative',alignItems:'center'}}>
             <View style={styles.headerContainer}>
-                <AntIcon name="left" size={20} color="white" onPress={()=>navigation.goBack()}/>
+               <TouchableOpacity onPress={()=>navigation.goBack()}>
+               <AntIcon name="left" size={20} color="white" />
+               </TouchableOpacity>
                 <EntIcon name="dots-three-vertical" size={20} color="white"/>
             </View>
             <Image source={{uri:data.image}} style={{width:width,height:height/2}}/>
