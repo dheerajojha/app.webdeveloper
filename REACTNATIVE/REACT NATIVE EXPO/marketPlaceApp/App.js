@@ -1,9 +1,16 @@
 import React from 'react'
-import StackNavigation from './src/Navigation/StackNavigation';
-
+import {View} from "react-native"
+import {NavigationContainer} from "@react-navigation/native"
+import TabNavigation from './src/Navigation/TabNavigation'
+import LoginScreen from "./src/Screens/LoginScreen"
+import { StatusBar } from 'expo-status-bar'
 const App = () => {
   return (
-    <StackNavigation/>
+    <View>
+    <StatusBar style='auto'/>
+    <LoginScreen/>
+    </View>
+  
   )
 }
 
