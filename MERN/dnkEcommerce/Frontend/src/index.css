@@ -6,6 +6,7 @@
   --whiteColor: #ffffff;
   --blackColor: #000000;
   --grayColor: #d3d3d3;
+  --bgColor:#F0F0F1;
   --sixtySixPx: 66px;
   --fortyTwoPx:42px;
   --thirtyFourPx: 34px;
@@ -19,19 +20,22 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   list-style: none;
   /* border:1px solid red; */
 }
-
+button{
+  outline:none;
+  border:none;
+}
 
 h1 {
   font-size: var(--sixtySixPx);
 }
 
 h2 {
-  font-size: var(--twentyFourPx);
+  font-size: var(--thirtyFourPx);
 }
 
 h3 {
@@ -117,6 +121,10 @@ select{
   border:1px solid var(--grayColor);
   font-size: 16px;
   outline:none;
+}
+label{
+  font-size: var(--fourteenPx);
+  font-weight: 600;
 }
 
 @media screen and (max-width:768px) {

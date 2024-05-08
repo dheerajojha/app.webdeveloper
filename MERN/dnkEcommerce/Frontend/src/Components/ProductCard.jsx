@@ -133,9 +133,6 @@ const ProductCardWrapper = styled.section`
   display:flex;
   flex-direction:column;
   gap:1rem;
-  h2{
-    font-size:var(--fortyTwoPx);
-}
 hr{
   width:200px;
   height:8px;

@@ -1,13 +1,13 @@
 import React from 'react'
 import { useParams,Link } from 'react-router-dom';
 import styled from "styled-components";
-import {asset16} from "../assets/";
-const SingleProduct = () => {
+import {asset16} from "../assets";
+const ProductDetail = () => {
   const params = useParams()
   console.log(params.id);
 
   return (
-    <SingleProductWrapper>
+    <ProductDetailWrapper>
            {/* left side start */}
         <div className="left">
         <img src={asset16} alt={asset16}  />
@@ -26,11 +26,11 @@ const SingleProduct = () => {
           <input type="number" placeholder='quantity' min={0} />
         </article>
         </div>
-    </SingleProductWrapper>
+    </ProductDetailWrapper>
   )
 }
 
-const SingleProductWrapper = styled.section`
+const ProductDetailWrapper = styled.section`
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:2rem;
@@ -62,4 +62,4 @@ padding-bottom:10rem;
   grid-template-columns:1fr;
 }
 `
-export default SingleProduct
+export default ProductDetail

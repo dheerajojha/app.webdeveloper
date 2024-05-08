@@ -10,8 +10,8 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [cart, setCart] = useState(0)
   const headerData = [{
-    title: 'Accessories',
-    path: 'accessories',
+    title: 'Kids',
+    path: 'kids',
   },
   {
     title: 'Men',

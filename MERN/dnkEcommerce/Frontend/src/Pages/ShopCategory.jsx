@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../Context/ShopContext';
-import { useLocation } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 import styled from "styled-components";
-import {AiOutlineRight} from "react-icons/ai"
 
 const ShopCategory = () => {
   const location = useLocation()
@@ -12,7 +11,7 @@ const ShopCategory = () => {
   return (
     <ShopCategoryWrapper>
       <div className="heading">
-        <h1>Shop Category</h1>
+        <h2>Shop Category</h2>
       </div>
 
       {/* filter title */}
@@ -32,10 +31,16 @@ const ShopCategory = () => {
             <div className="card" key={index}>
               <img src={item.image} alt="" />
               <div className="card-body">
-                <h3>{item.title}</h3>
+                <h5>{item.title}</h5>
+                <small>{item.category}</small>
+                <h5>${item.price}</h5>
               </div>
             </div>
           ))}
+      </div>
+
+      <div style={{textAlign:'center',marginTop:'3rem'}}>
+        <Link to="/" className="cta">Explore more</Link>
       </div>
     </ShopCategoryWrapper>
 
@@ -45,6 +50,7 @@ const ShopCategory = () => {
 const ShopCategoryWrapper = styled.section`
 padding-top:10rem;
 padding-bottom:10rem;
+
 .flexBetween{
   span{
     font-weight:600;

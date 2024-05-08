@@ -22,6 +22,7 @@ const ShopBannerWrapper = styled.section`
     linear-gradient(
       rgba(0, 106, 255, 0.45), 
       rgba(54, 134, 204, 0.45)
+      
     ),
     url(${bgImg});
 height:100vh;

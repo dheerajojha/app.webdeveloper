@@ -5,11 +5,11 @@ const ShopContextProvider = ({ children }) => {
 
      const [products,setProducts]=useState([{
         id:1,
-        title:"Mens Luxury Shoes",
-        category:'Men',
+        title:"Kids Luxury Shoes",
+        category:'Kids',
         image:asset9,
         price:2000,
-        description:'All About Mens Wear',
+        description:'All About Kids Wear',
         rating:3.5,
       },
       {
@@ -27,7 +27,7 @@ const ShopContextProvider = ({ children }) => {
         category:'Women',
         image:asset11,
         price:1999,
-        description:'All About Mens Wear',
+        description:'All About Women Wear',
         rating:3.5,
       },
       {
@@ -42,8 +42,8 @@ const ShopContextProvider = ({ children }) => {
     
       {
         id:5,
-        title:"Mens Luxury Shoes",
-        category:'Men',
+        title:"Kids Luxury Shoes",
+        category:'Kids',
         image:asset13,
         price:2000,
         description:'All About Mens Wear',
@@ -51,8 +51,8 @@ const ShopContextProvider = ({ children }) => {
       },
       {
         id:6,
-        title:"Mens Luxury Shoes",
-        category:'Men',
+        title:"Kids Luxury Shoes",
+        category:'Kid',
         image:asset14,
         price:2000,
         description:'All About Mens Wear',
