@@ -50,23 +50,12 @@ grid-template-columns:repeat(auto-fit,minmax(300px,auto));
 gap:2rem;
 .card{
     position:relative;
-    color:var(--whiteColor);
-    &::after{
-            content:'';
-            position: absolute;
-            top:0%;
-            left:0%;
-            width:100%;
-            height:100%;
-            background-color:rgba(0,0,0,0.2);
-        }
+    color:var(--whiteColor);  
     img{
         width:100%;
         height:500px;
         object-fit:cover;
         border-radius:5px;
-        position: relative;
-       
     }
     .card-body{
         position:absolute;

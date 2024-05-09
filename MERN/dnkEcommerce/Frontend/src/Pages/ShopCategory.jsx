@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ShopContext } from '../Context/ShopContext';
 import { useLocation,Link } from "react-router-dom";
 import styled from "styled-components";
+import {Item} from "../Components"
 
 const ShopCategory = () => {
   const location = useLocation()
@@ -28,14 +29,8 @@ const ShopCategory = () => {
       <div className="card-container">
         {products.filter((val) => (
           val.category.toLowerCase() === path.toLowerCase().slice(1))).map((item, index) => (
-            <div className="card" key={index}>
-              <img src={item.image} alt="" />
-              <div className="card-body">
-                <h5>{item.title}</h5>
-                <small>{item.category}</small>
-                <h5>${item.price}</h5>
-              </div>
-            </div>
+            <Item key={index} id={item.id} title={item.title} image={item.image} 
+            oldprice={item.oldPrice} newprice={item.newPrice} category={item.category}/> 
           ))}
       </div>
 
@@ -49,17 +44,14 @@ const ShopCategory = () => {
 
 const ShopCategoryWrapper = styled.section`
 padding-top:10rem;
-padding-bottom:10rem;
-
 .flexBetween{
   span{
     font-weight:600;
   }
 }
 .card-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,auto));
-  gap:2rem;
+ display:flex;
+ gap:1rem;
   margin-top:1rem;
 }
 `

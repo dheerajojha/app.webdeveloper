@@ -1,5 +1,5 @@
 import React from 'react';
-import {ShopBanner,CategoryCard, ProductCard, Special, BrandSwiper } from '../Components';
+import {ShopBanner,CategoryCard, Special, BrandSwiper, FeaturedProduct } from '../Components';
 
 const Shop = () => {
 
@@ -8,7 +8,7 @@ const Shop = () => {
     <ShopBanner/>  
     <BrandSwiper/>
     <CategoryCard/>
-    <ProductCard/>
+    <FeaturedProduct/>
     <Special/>
     </>  
   )
