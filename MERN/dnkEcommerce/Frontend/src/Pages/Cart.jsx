@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext} from 'react'
 import styled from "styled-components";
 import { ShopContext } from "../Context/ShopContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 const Cart = () => {
   const { products } = useContext(ShopContext)
-  console.log(products)
+
   return (
     <CartWrapper>
       {/* cart table start */}
@@ -21,11 +21,11 @@ const Cart = () => {
         {products.map((item, index) => (
           <div key={index} className='col'>
             <img src={item.image} alt={item.title} />
-            <h5>{item.title}</h5>
-            <h5>{item.price}</h5>
-            <h5>{item.category}</h5>
-            <h5>{item.rating}</h5>
-            <h5><RiDeleteBin6Line color="red" /></h5>
+            <p>{item.title}</p>
+            <p>$90</p>
+            <input type="number" placeholder='0' min={0} />
+            <p>$85</p>
+            <p><RiDeleteBin6Line color="red" /></p>
           </div>
         ))}
       </div>
@@ -48,13 +48,13 @@ const Cart = () => {
             <p>1000</p>
           </li>
          </ul>
-          <button className='cta'>Proceed to Checkout</button>
+          <button className='cta-red'>Proceed to Checkout</button>
         </div>
         <div className="col">
           <h4>Promo Code</h4>
           <div className="form-group">
             <input type="text" />
-            <button className='cta'>Proceed</button>
+            <button className='cta-black'>Proceed</button>
           </div>
         </div>
       </div>
@@ -99,6 +99,9 @@ img{
     border-bottom:1px solid var(--grayColor);
     padding:1rem;
    }
+  }
+  .cta-red{
+margin-top:1rem;
   }
 }
 

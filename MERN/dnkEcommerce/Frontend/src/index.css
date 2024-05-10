@@ -102,6 +102,18 @@ footer {
   color: var(--blackColor);
   border-radius: 2px;
 }
+.cta-red {
+  padding: .8rem 1.4rem;
+  background-color:red;
+  color: var(--whiteColor);
+  border-radius: 2px;
+}
+.cta-black {
+  padding: .8rem 1.4rem;
+  background-color: var(--blackColor);
+  color: var(--whiteColor);
+  border-radius: 2px;
+}
 
 .cta {
   padding: .8rem 1.4rem;
