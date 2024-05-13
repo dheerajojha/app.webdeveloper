@@ -1,6 +1,5 @@
 import React from 'react'
-import LoginScreen from "../Screens/LoginScreen"
-import GetStartedScreen from '../Screens/GetStatedScreen';
+import {LoginScreen,GetStartedScreen} from "../Screens"
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from './TabNavigation';

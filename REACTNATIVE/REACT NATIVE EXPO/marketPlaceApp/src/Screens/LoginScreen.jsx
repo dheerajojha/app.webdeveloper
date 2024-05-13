@@ -2,8 +2,10 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import gStyles from "../../style"
+import {useNavigation} from "@react-navigation/native"
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView className="justify-center items-center h-full p-4">
       <Text style={styles.h1}>MARKETPLACE</Text>
@@ -13,7 +15,7 @@ const LoginScreen = () => {
           <TextInput placeholder='Password' style={gStyles.input} />
         </View>
         <TouchableOpacity style={gStyles.cta}>
-          <Text style={gStyles.ctaText}>Login</Text>
+          <Text style={gStyles.ctaText} onPress={()=>navigation.navigate('TabNavigation')}>Login</Text>
         </TouchableOpacity>     
        <Text className="text-center">Don't have an Account? <Text style={gStyles.small}>Register</Text></Text>
       </View>
