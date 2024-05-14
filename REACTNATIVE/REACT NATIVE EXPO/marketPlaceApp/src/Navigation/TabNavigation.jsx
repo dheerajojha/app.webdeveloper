@@ -2,12 +2,13 @@ import React from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeScreen, AddPostScreen, ExploreScreen, ProfileScreen } from '../Screens';
-import gStyles from '../../style';
+import colors from "../Constants/colors";
+
 const Tab = createBottomTabNavigator();
 const TabNavigation = () => {
   return (
     <Tab.Navigator screenOptions={{
-      headerShown: false, tabBarShowLabel: false, tabBarActiveTintColor: 'blue', tabBarInactiveTintColor: 'black',
+      headerShown: false, tabBarShowLabel: false, tabBarActiveTintColor:colors.primary, tabBarInactiveTintColor:colors.black,
       tabBarStyle: { height: 80, borderTopLeftRadius: 20, borderTopRightRadius: 20 },
     }}>
       <Tab.Screen name="HomeScreen" component={HomeScreen} options={{ tabBarIcon: ({ color }) => (<AntDesign name="home" size={24} color={color} />) }} />
