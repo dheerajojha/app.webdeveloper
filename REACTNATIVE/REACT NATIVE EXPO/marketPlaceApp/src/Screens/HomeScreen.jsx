@@ -95,7 +95,9 @@ const HomeScreen = () => {
         <View  className="p-4 gap-y-6">
       {/* header start */}
       <View style={gStyles.flexBetween}>
-        <AntDesign name="left" size={20} onPress={()=>navigation.goBack()} />
+        <View className="bg-white p-3 rounded-sm">
+        <AntDesign name="left" size={20} onPress={()=>navigation.goBack()}/>
+        </View>
         <Image className="w-[40px] h-[40px] object-cover" source={{ uri: 'https://e7.pngegg.com/pngimages/178/595/png-clipart-user-profile-computer-icons-login-user-avatars-monochrome-black-thumbnail.png' }} />
       </View>
 
