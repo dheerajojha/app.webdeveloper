@@ -8,8 +8,7 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
-// import { db, storage } from "../../firebaseConfig";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { useFormik } from "formik";
 import gStyle from "../../style";
 import { Picker } from "@react-native-picker/picker";
@@ -19,6 +18,8 @@ import { Entypo } from "@expo/vector-icons";
 import gStyles from "../../style";
 import { useNavigation } from "@react-navigation/native";
 import { showMessage } from "react-native-flash-message";
+import { db } from "../../firebaseConfig";
+import { ref, uploadBytes, getStorage, getDownloadURL } from "firebase/storage";
 
 const AddPostScreen = () => {
   const navigation = useNavigation();
@@ -46,13 +47,24 @@ const AddPostScreen = () => {
       description: "",
       price: "",
       category: "",
+      image:"",
     },
     onSubmit: async (value) => {
       try {
-        const db = getFirestore()
+        const storage = getStorage();
         // add to firestore and store
         const colRef = collection(db, "Posts");
         const result = await addDoc(colRef, value);
+        // add image uri to blob file
+        
+        const resp = await fetch(selectedImage);
+        const blob = await resp.blob();
+
+        const storageRef = ref(storage, "communityPost/" + Date.now() + ".jpg");
+        // 'file' comes from the Blob or File API
+        const uploadByte = await uploadBytes(storageRef, blob)
+        const downloadUrl = await getDownloadURL(storageRef)
+        formik.values.image=downloadUrl       
         if (result) {
           showMessage({ type: "success", message: "post add successfully" });
         }
@@ -71,10 +83,8 @@ const AddPostScreen = () => {
       quality: 1,
     });
 
-    console.log(result);
-
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      setSelectedImage(result.assets[0].uri);
     }
   };
 
@@ -96,7 +106,7 @@ const AddPostScreen = () => {
           {selectedImage ? (
             <Image
               className="w-[100px] h-[100px]"
-              source={{ uri: selectedImage}}
+              source={{ uri: selectedImage }}
             />
           ) : (
             <Image
