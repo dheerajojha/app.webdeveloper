@@ -5,11 +5,14 @@ import {
   TouchableOpacity,
   View,
   Image,
+  ActivityIndicator,
+  Alert,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import gStyle from "../../style";
 import { Picker } from "@react-native-picker/picker";
 import colors from "../Constants/colors";
@@ -22,6 +25,7 @@ import { db } from "../../firebaseConfig";
 import { ref, uploadBytes, getStorage, getDownloadURL } from "firebase/storage";
 
 const AddPostScreen = () => {
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const [category, setCategory] = useState([]);
 
@@ -41,35 +45,45 @@ const AddPostScreen = () => {
   }, []);
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const validateSchema = Yup.object().shape({
+    title: Yup.string().required("Title is required"),
+    description:Yup.string().required('Description is required'),
+
+  });
   const formik = useFormik({
     initialValues: {
       title: "",
       description: "",
       price: "",
       category: "",
-      image:"",
+      image: "",
     },
+    // validationSchema: validateSchema,
+
     onSubmit: async (value) => {
       try {
+        setLoading(true);
+        await validateSchema.validate(value); 
         const storage = getStorage();
         // add to firestore and store
         const colRef = collection(db, "Posts");
         const result = await addDoc(colRef, value);
         // add image uri to blob file
-        
+
         const resp = await fetch(selectedImage);
         const blob = await resp.blob();
 
         const storageRef = ref(storage, "communityPost/" + Date.now() + ".jpg");
         // 'file' comes from the Blob or File API
-        const uploadByte = await uploadBytes(storageRef, blob)
-        const downloadUrl = await getDownloadURL(storageRef)
-        formik.values.image=downloadUrl       
+        const uploadByte = await uploadBytes(storageRef, blob);
+        const downloadUrl = await getDownloadURL(storageRef);
+        formik.values.image = downloadUrl;
         if (result) {
+          setLoading(false);
           showMessage({ type: "success", message: "post add successfully" });
         }
       } catch (error) {
-        console.log(error.message);
+       showMessage({type:'danger',message:error.message})
       }
     },
   });
@@ -152,8 +166,16 @@ const AddPostScreen = () => {
             <Picker.Item key={index} label={item.title} value={item.title} />
           ))}
         </Picker>
-        <TouchableOpacity style={gStyle.cta} onPress={formik.handleSubmit}>
-          <Text style={gStyle.ctaText}>Submit</Text>
+        <TouchableOpacity
+          style={gStyle.cta}
+          onPress={formik.handleSubmit}
+          disabled={loading}
+        >
+          {loading ? (
+            <ActivityIndicator color="white" />
+          ) : (
+            <Text style={gStyle.ctaText}>Submit</Text>
+          )}
         </TouchableOpacity>
       </View>
     </SafeAreaView>
