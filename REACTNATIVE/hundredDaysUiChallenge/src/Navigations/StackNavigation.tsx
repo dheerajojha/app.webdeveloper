@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BottomTabNavigation from './DAY026/BottomTabNavigation';
+import BottomTabNavigation from './Day027/BottomTabNavigation';
+import InvestementDetailScreen from '../Screens/Day027/InvestementDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,7 +11,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="HomeScreen">
+        initialRouteName="TabNavigation">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -80,10 +81,13 @@ const StackNavigation: React.FC = () => {
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         <Stack.Screen name="SingleScreen" component={SingleScreen}/> */}
 
-           {/* created by @app.webdeveloper */}
             {/* day 026 */}
-            <Stack.Screen name="TabNavigator" component={BottomTabNavigation}/>
+            {/* <Stack.Screen name="TabNavigator" component={BottomTabNavigation}/> */}
 
+              {/* created by @app.webdeveloper */}
+            {/* day 026 */}
+            <Stack.Screen name="TabNavigation" component={BottomTabNavigation}/>
+            <Stack.Screen name="InvestmentDetailScreen" component={InvestementDetailScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
