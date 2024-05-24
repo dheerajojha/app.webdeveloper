@@ -13,7 +13,7 @@ const navigation = useNavigation()
      <View className="h-[32%] items-center gap-y-6 bg-white rounded-t-3xl p-4">
       <Text style={styles.h1}>Visit Market Place</Text>
       <Text style={gStyles.p}>Visit Market Place For Your 24*7 Services With Ease and Assing You with Top Notch Services and Effect Your Process With Ease and Strategy Basis</Text>
-      <TouchableOpacity style={gStyles.cta} onPress={()=>navigation.navigate('LoginScreen')}>
+      <TouchableOpacity style={gStyles.cta} onPress={()=>navigation.navigate('RegisterScreen')}>
         <Text style={gStyles.ctaText}>Get Started</Text>
       </TouchableOpacity>
      </View>
