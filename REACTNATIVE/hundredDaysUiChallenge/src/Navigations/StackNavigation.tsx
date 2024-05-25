@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BottomTabNavigation from './Day027/BottomTabNavigation';
-import InvestementDetailScreen from '../Screens/Day027/InvestementDetailScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from '../Screens/Day028/HomeScreen';
+import CourseDetailScreen from '../Screens/Day028/CourseDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,8 +10,8 @@ const StackNavigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{ headerShown: false }}
-        initialRouteName="TabNavigation">
+        screenOptions={{headerShown: false}}
+        initialRouteName="HomeScreen">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -81,13 +81,16 @@ const StackNavigation: React.FC = () => {
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen}/>
         <Stack.Screen name="SingleScreen" component={SingleScreen}/> */}
 
-            {/* day 026 */}
-            {/* <Stack.Screen name="TabNavigator" component={BottomTabNavigation}/> */}
+        {/* day 026 */}
+        {/* <Stack.Screen name="TabNavigator" component={BottomTabNavigation}/> */}
 
-              {/* created by @app.webdeveloper */}
-            {/* day 026 */}
-            <Stack.Screen name="TabNavigation" component={BottomTabNavigation}/>
-            <Stack.Screen name="InvestmentDetailScreen" component={InvestementDetailScreen}/>
+        {/* day 026 */}
+        {/* <Stack.Screen name="TabNavigation" component={BottomTabNavigation}/>
+            <Stack.Screen name="InvestmentDetailScreen" component={InvestementDetailScreen}/> */}
+
+        {/* created by @app.webdeveloper */}
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="CourseDetailScreen" component={CourseDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
