@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../Screens/Day028/HomeScreen';
 import CourseDetailScreen from '../Screens/Day028/CourseDetailScreen';
+import BottomTabNavigation from './Day029/BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +12,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="HomeScreen">
+        initialRouteName="BottomTabNavigation">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -88,9 +89,11 @@ const StackNavigation: React.FC = () => {
         {/* <Stack.Screen name="TabNavigation" component={BottomTabNavigation}/>
             <Stack.Screen name="InvestmentDetailScreen" component={InvestementDetailScreen}/> */}
 
-        {/* created by @app.webdeveloper */}
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="CourseDetailScreen" component={CourseDetailScreen} />
+        {/* <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="CourseDetailScreen" component={CourseDetailScreen} /> */}
+
+         {/* created by @app.webdeveloper */}
+         <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
