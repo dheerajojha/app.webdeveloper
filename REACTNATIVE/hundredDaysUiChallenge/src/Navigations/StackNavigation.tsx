@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../Screens/Day028/HomeScreen';
 import CourseDetailScreen from '../Screens/Day028/CourseDetailScreen';
 import BottomTabNavigation from './Day029/BottomTabNavigation';
+import SearchScreen from '../Screens/Day029/SearchScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -94,6 +95,7 @@ const StackNavigation: React.FC = () => {
 
          {/* created by @app.webdeveloper */}
          <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/>
+         <Stack.Screen name="SearchScreen" component={SearchScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
