@@ -12,13 +12,18 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import GlobalStyles from '../../Constants/GlobalStyles';
-import {useNavigation} from "@react-navigation/native"
+import {useNavigation} from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../Redux/Features/CartSlice';
 const {height, width} = Dimensions.get('window');
 
 const HomeScreen = () => {
-  const navigation:any = useNavigation()
+  const dispatch = useDispatch()
+  const {cart} = useSelector((state:any)=>state.cart)
+  console.log(cart)
+  const navigation: any = useNavigation();
   const [activeCategoryId, setActiveCategoryId] = useState(null);
-  const[search,setSearch]=useState('')
+  const [search, setSearch] = useState('');
 
   const [product, setProduct] = useState([
     {
@@ -79,20 +84,25 @@ const HomeScreen = () => {
       id: 2,
       title: 'Burger',
     },
+    {id: 3, title: 'All'},
   ];
 
   const categoryActive = (id: any) => {
     setActiveCategoryId(id);
   };
 
-  
   return (
     <SafeAreaView style={styles.homeWrapper}>
-      <StatusBar backgroundColor={'black'}/>
+      <StatusBar backgroundColor={'black'} />
       {/* header start */}
       <View style={GlobalStyles.flexBetween}>
         <FeatherIcon name="grid" size={20} color="#fff" />
-        <AntIcon name="search1" size={20} color="#fff" onPress={()=>navigation.navigate('SearchScreen')} />
+        <AntIcon
+          name="search1"
+          size={20}
+          color="#fff"
+          onPress={() => navigation.navigate('SearchScreen')}
+        />
       </View>
 
       {/* title start */}
@@ -102,7 +112,7 @@ const HomeScreen = () => {
       </View>
 
       {/* category start */}
-      <View style={GlobalStyles.flexRow}>
+      <View style={[GlobalStyles.flexRow,{gap:30}]}>
         {category.map((item, index) => (
           <TouchableOpacity key={index} onPress={() => categoryActive(item.id)}>
             <Text
@@ -124,7 +134,9 @@ const HomeScreen = () => {
           .filter(item => item.categoryId === activeCategoryId)
           .map((val, index) => (
             <TouchableOpacity key={index} style={styles.card}>
-              <View style={{alignSelf:'flex-end',padding:5}}><AntIcon name="heart" color="white"/></View>
+              <View style={{alignSelf: 'flex-end', padding: 5}}>
+                <AntIcon name="heart" color="white" size={20} />
+              </View>
               <View style={{alignItems: 'center'}}>
                 <Image
                   source={val.image}
@@ -132,7 +144,7 @@ const HomeScreen = () => {
                 />
               </View>
               {/* card body */}
-              <View style={[GlobalStyles.flexBetween,{padding:10}]}>
+              <View style={[GlobalStyles.flexBetween, {padding: 10}]}>
                 <Text style={{color: 'white'}}>{val.title}</Text>
                 <Text style={styles.h2}>${val.price}</Text>
               </View>
@@ -142,7 +154,7 @@ const HomeScreen = () => {
                   padding: 10,
                   alignItems: 'center',
                 }}>
-                <AntIcon name="plus" color="white" size={20} />
+                <AntIcon name="plus" color="white" size={20} onPress={()=>dispatch(addToCart(val))} />
               </View>
             </TouchableOpacity>
           ))}
@@ -156,13 +168,12 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   h1: {fontSize: 30, fontWeight: '700', color: '#449086', letterSpacing: 8},
   h2: {fontSize: 20, fontWeight: '400', color: '#fff'},
-  homeWrapper: {padding: 10, backgroundColor: '#000000', flex: 1, gap: 15},
+  homeWrapper: {padding: 10, backgroundColor: '#000000', flex: 1, gap:15},
   card: {
     backgroundColor: 'gray',
     width: 185,
     height: 240,
     marginRight: 10,
     marginBottom: 30,
-    gap: 10,
   },
 });

@@ -92,10 +92,14 @@ const StackNavigation: React.FC = () => {
 
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="CourseDetailScreen" component={CourseDetailScreen} /> */}
-
-         {/* created by @app.webdeveloper */}
-         <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/>
-         <Stack.Screen name="SearchScreen" component={SearchScreen}/>
+        
+        {/* day 29 */}
+        {/* created by @app.webdeveloper */}
+        <Stack.Screen
+          name="BottomTabNavigation"
+          component={BottomTabNavigation}
+        />
+        <Stack.Screen name="SearchScreen" component={SearchScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
