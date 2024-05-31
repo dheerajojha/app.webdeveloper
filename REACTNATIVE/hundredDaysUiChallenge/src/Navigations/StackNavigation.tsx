@@ -1,10 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day028/HomeScreen';
-import CourseDetailScreen from '../Screens/Day028/CourseDetailScreen';
-import BottomTabNavigation from './Day029/BottomTabNavigation';
-import SearchScreen from '../Screens/Day029/SearchScreen';
+import HomeScreen from '../Screens/Day030/HomeScreen';
+import BottomTabNavigation from './Day030/BottomTabNavigation';
+import TripDetailScreen from '../Screens/Day030/TripDetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -94,12 +93,16 @@ const StackNavigation: React.FC = () => {
         <Stack.Screen name="CourseDetailScreen" component={CourseDetailScreen} /> */}
         
         {/* day 29 */}
-        {/* created by @app.webdeveloper */}
-        <Stack.Screen
+        {/* <Stack.Screen
           name="BottomTabNavigation"
           component={BottomTabNavigation}
         />
-        <Stack.Screen name="SearchScreen" component={SearchScreen} />
+        <Stack.Screen name="SearchScreen" component={SearchScreen} /> */}
+
+           {/* created by @app.webdeveloper */}
+           <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} /> 
+          <Stack.Screen name="TripDetailScreen" component={TripDetailScreen} /> 
       </Stack.Navigator>
     </NavigationContainer>
   );
