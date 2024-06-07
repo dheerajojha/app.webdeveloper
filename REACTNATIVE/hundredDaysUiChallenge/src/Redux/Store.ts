@@ -3,6 +3,7 @@ import cartSlice from './Features/CartSlice';
 const store = configureStore({
   reducer: {
     cart: cartSlice,
+    cart31:cartSlice,
   },
 });
 

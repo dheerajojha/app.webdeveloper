@@ -14,8 +14,12 @@ import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import GlobalStyles from '../../Constants/GlobalStyles';
+import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
 const {height, width} = Dimensions.get('window');
 const HomeScreen = () => {
+  const {cart} = useSelector((state: any) => state.cart31);
+  const navigation: any = useNavigation();
   const [category, setCategory] = useState([
     {
       id: 1,
@@ -52,6 +56,7 @@ const HomeScreen = () => {
       rating: 1.2,
       categoryId: 1,
       image: require('../../Assets/Images/Day031/pic1.png'),
+      price: 200,
     },
     {
       id: 2,
@@ -169,8 +174,15 @@ const HomeScreen = () => {
       <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
       {/* header start */}
       <View style={GlobalStyles.flexBetween}>
-        <Text>Discover</Text>
-        <AntIcon name="shoppingcart" size={24} />
+        <Text style={styles.h2}>Discover</Text>
+        <TouchableOpacity
+          style={styles.iconContainer}
+          onPress={() => navigation.navigate('Cart')}>
+          <AntIcon name="shoppingcart" size={24} color="#000" />
+          <View style={styles.notificationContainer}>
+            <Text style={{color:'#fff'}}>{cart.length}</Text>
+          </View>
+        </TouchableOpacity>
       </View>
 
       {/* search start */}
@@ -193,6 +205,7 @@ const HomeScreen = () => {
         />
       </View>
 
+      {/* category start */}
       <View style={GlobalStyles.flexBetween}>
         <Text style={styles.h2}>Categories</Text>
         <Text style={styles.span}>See All</Text>
@@ -218,18 +231,24 @@ const HomeScreen = () => {
         )}
       />
 
+      {/* product card start */}
       <ScrollView
         contentContainerStyle={styles.cardContainer}
         showsVerticalScrollIndicator={false}>
         {product
           .filter(item => item.categoryId == categoryActive)
           .map(val => (
-            <TouchableOpacity key={val.id} style={styles.card}>
+            <TouchableOpacity
+              key={val.id}
+              style={styles.card}
+              onPress={() =>
+                navigation.navigate('ProductDetail', {params: val})
+              }>
               <Image source={val.image} style={{width: '100%', height: 200}} />
               <View style={GlobalStyles.flexBetween}>
                 <View>
-                <Text style={styles.h3}>{val.title}</Text>
-                <Text style={styles.h2}>${val.price}</Text>
+                  <Text style={[styles.h3, {color: 'gray'}]}>{val.title}</Text>
+                  <Text style={styles.h2}>${val.price}</Text>
                 </View>
                 <Text>⭐{val.rating}</Text>
               </View>
@@ -248,6 +267,18 @@ const styles = StyleSheet.create({
   h3: {fontSize: 16, color: '#000', fontWeight: '500'},
   span: {fontSize: 14, color: '#19c563', fontWeight: '600'},
   homeWrapper: {padding: 10, gap: 15, flex: 1, backgroundColor: '#fff'},
+  iconContainer: {backgroundColor: '#f1f2f3', padding: 10, borderRadius: 30},
+
+  notificationContainer: {
+    position: 'absolute',
+    right: 0,
+    top: -10,
+    backgroundColor: '#19c563',
+    borderRadius:30,
+    width:20,height:20,
+    justifyContent:'center',
+    alignItems:'center'
+  },
   searchContainer: {
     paddingHorizontal: 10,
     paddingVertical: 8,
@@ -275,9 +306,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    marginBottom: 50,
+    marginBottom: 70,
   },
-  cardContainer: {flexDirection: 'row', gap: 10,flexWrap:'wrap'},
+  cardContainer: {flexDirection: 'row', gap: 10, flexWrap: 'wrap'},
   card: {
     backgroundColor: '#f1f2f3',
     borderRadius: 20,
