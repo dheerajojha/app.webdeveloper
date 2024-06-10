@@ -74,14 +74,14 @@ const CartScreen = () => {
                 <View style={GlobalStyles.flexRow}>
                   <TouchableOpacity
                     style={styles.iconContainer}
-                    onPress={() => dispatch(incrementQuantity(item))}>
-                    <AntIcon name="plus" size={24} />
-                  </TouchableOpacity>
-                  <Text style={styles.h3}>{cart[0].quantity}</Text>
-                  <TouchableOpacity
-                    style={styles.iconContainer}
                     onPress={() => dispatch(decrementQuantity(item))}>
                     <AntIcon name="minus" size={24} />
+                  </TouchableOpacity>
+                  <Text style={styles.h3}>{item.quantity}</Text>
+                  <TouchableOpacity
+                    style={styles.iconContainer}
+                    onPress={() => dispatch(incrementQuantity(item))}>
+                    <AntIcon name="plus" size={24} />
                   </TouchableOpacity>
                 </View>
               </View>
