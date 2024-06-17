@@ -1,10 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day031/HomeScreen';
-import BottomTabNavigation from './Day031/BottomTabNavigation';
-import ProductDetailScreen from '../Screens/Day031/ProductDetailScreen';
-import CartScreen from '../Screens/Day031/CartScreen';
+import HomeScreen from '../Screens/Day032/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -100,10 +97,13 @@ const StackNavigation: React.FC = () => {
         />
         <Stack.Screen name="SearchScreen" component={SearchScreen} /> */}
 
-           {/* created by @app.webdeveloper */}
-           <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/> 
+           {/* <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/> 
            <Stack.Screen name="ProductDetail" component={ProductDetailScreen}/> 
-           <Stack.Screen name="Cart" component={CartScreen}/> 
+           <Stack.Screen name="Cart" component={CartScreen}/>  */}
+
+               {/* created by @app.webdeveloper */}
+
+               <Stack.Screen name="HomeScreen" component={HomeScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
