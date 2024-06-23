@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day032/HomeScreen';
+import HomeScreen from '../Screens/Day033/RegisterScreen';
+import RegisterScreen from '../Screens/Day033/RegisterScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -103,7 +104,7 @@ const StackNavigation: React.FC = () => {
 
                {/* created by @app.webdeveloper */}
 
-               <Stack.Screen name="HomeScreen" component={HomeScreen}/>
+               <Stack.Screen name="RegisterScreen" component={RegisterScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
