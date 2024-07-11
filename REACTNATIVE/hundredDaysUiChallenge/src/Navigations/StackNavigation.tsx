@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day033/RegisterScreen';
-import RegisterScreen from '../Screens/Day033/RegisterScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from '../Screens/Day034/HomeScreen';
+import BottomNavigation from './Day034/BottomNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -10,7 +10,7 @@ const StackNavigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{headerShown: false}}
+        screenOptions={{ headerShown: false }}
         initialRouteName="BottomTabNavigation">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
@@ -90,7 +90,7 @@ const StackNavigation: React.FC = () => {
 
         {/* <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="CourseDetailScreen" component={CourseDetailScreen} /> */}
-        
+
         {/* day 29 */}
         {/* <Stack.Screen
           name="BottomTabNavigation"
@@ -98,13 +98,14 @@ const StackNavigation: React.FC = () => {
         />
         <Stack.Screen name="SearchScreen" component={SearchScreen} /> */}
 
-           {/* <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/> 
+        {/* <Stack.Screen name="BottomTabNavigation" component={BottomTabNavigation}/> 
            <Stack.Screen name="ProductDetail" component={ProductDetailScreen}/> 
            <Stack.Screen name="Cart" component={CartScreen}/>  */}
 
-               {/* created by @app.webdeveloper */}
+        {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen}/> */}
 
-               <Stack.Screen name="RegisterScreen" component={RegisterScreen}/>
+        {/* created by @app.webdeveloper */}
+        <Stack.Screen name="BottomTab" component={BottomNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
