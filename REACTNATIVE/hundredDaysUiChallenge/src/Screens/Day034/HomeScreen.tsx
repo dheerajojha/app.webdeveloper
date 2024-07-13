@@ -7,8 +7,10 @@ import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons"
 import GlobalStyles from '../../Constants/GlobalStyles'
 import Carousel from 'react-native-reanimated-carousel'
 import LottieView from 'lottie-react-native'
+import { useNavigation } from "@react-navigation/native"
 const { height, width } = Dimensions.get('window')
 const HomeScreen = () => {
+  const navigation: any = useNavigation()
   interface carouselType {
     id: number,
     title: string,
@@ -190,7 +192,7 @@ const HomeScreen = () => {
           </View>
 
           <FlatList contentContainerStyle={{ gap: 20 }} showsHorizontalScrollIndicator={false} horizontal data={trendingData} renderItem={({ item }) => (
-            <TouchableOpacity style={{ backgroundColor: "#fff", }}>
+            <TouchableOpacity onPress={() => navigation.navigate('single-screen', { items: item })} style={{ backgroundColor: "#fff", }}>
               <Image source={item.image} style={{ height: height / 4, width: width * 0.95, borderRadius: 10 }} />
               <View style={{ padding: 10, gap: 5 }}>
                 <Text style={styles.h3}>{item.name}</Text>

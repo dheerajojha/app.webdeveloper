@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../Screens/Day034/HomeScreen';
 import BottomNavigation from './Day034/BottomNavigation';
+import SingleScreen from '../Screens/Day034/SingleScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -106,6 +107,7 @@ const StackNavigation: React.FC = () => {
 
         {/* created by @app.webdeveloper */}
         <Stack.Screen name="BottomTab" component={BottomNavigation} />
+        <Stack.Screen name="single-screen" component={SingleScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
