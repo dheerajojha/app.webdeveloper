@@ -157,7 +157,6 @@ const HomeScreen = () => {
               autoPlay={true}
               data={carouselData}
               scrollAnimationDuration={1000}
-              onSnapToItem={(index) => console.log('current index:', index)}
               renderItem={({ item, index }) => (
                 // card start
                 <View key={index} style={{ flex: 1, justifyContent: 'center' }} >

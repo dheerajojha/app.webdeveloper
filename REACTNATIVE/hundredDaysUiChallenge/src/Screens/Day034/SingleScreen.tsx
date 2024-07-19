@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, Alert, } from 'react-native'
 import React from 'react'
 import { useNavigation, useRoute } from "@react-navigation/native"
 import AntIcon from 'react-native-vector-icons/AntDesign'
@@ -42,12 +42,12 @@ const SingleScreen = () => {
         <>
             <View style={styles.singleScreenWrapper}>
                 <ImageBackground source={items.image} style={{ width: width, height: height / 3 }}>
-                    <SafeAreaView style={[GlobalStyles.flexBetween, { padding: 10 }]}>
-                        <TouchableOpacity style={styles.iconContainer} onPress={()=>(navigation.goBack())}>
+                    <SafeAreaView style={[GlobalStyles.flexBetween, { padding: 10 ,zIndex:1}]}>
+                        <TouchableOpacity style={styles.iconContainer} onPress={()=>navigation.goBack()}>
                             <AntIcon name="left" size={20} color="#fff" />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.iconContainer}>
+                        <TouchableOpacity style={styles.iconContainer} >
                             <AntIcon name="save" size={20} color="#fff" />
                         </TouchableOpacity>
                     </SafeAreaView>
@@ -114,9 +114,9 @@ const SingleScreen = () => {
 
                     {/* related image gallery start */}
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        {items.relatedImage.map((val: any) => (
+                        {items.relatedImage.map((val: any,index:any) => (
 
-                            <TouchableOpacity>
+                            <TouchableOpacity key={index}>
                                 <Image source={val} style={{ width: width / 4, height: 80, borderRadius: 15 }} />
                                 <LinearGradient style={{ borderRadius: 15, width: width / 4, height: 80, position: 'absolute' }} colors={['transparent', 'rgba(0,0,0,0.4)']} />
                             </TouchableOpacity>
