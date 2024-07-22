@@ -20,7 +20,7 @@ const Successstory = () => {
     return (
         <SuccessstoryWrapper>
             <div className="row grid-2">
-                <div className="col-l">
+                <div className="col-l gap">
                     <div className="card">
                         <div className="card-body flex-row">
                             <p>Top up amount</p>
@@ -29,26 +29,23 @@ const Successstory = () => {
                         </div>
                     </div>
 
-                    <div className="flex-row">
-                        <div className="card">
-                            <div className="card-body">
-                                <p>Top up amount</p>
-                                <h3>2000</h3>
-                                <span>USD$</span>
-                            </div>
+                    <div className="card">
+                        <div className="card-body flex-row">
+                            <p>Top up amount</p>
+                            <h3>2000</h3>
+                            <span>USD$</span>
                         </div>
-
-                        <div className="card">
-                            <div className="card-body">
+                    </div>
+                    <div className="card">
+                            <div className="card-body flex-row">
                                 <p>Top up amount</p>
                                 <h3>4000</h3>
                                 <span>USD$</span>
                             </div>
                         </div>
-                    </div>
                 </div>
                 <div className="col-r gap">
-                    <h3>Our Success Story With Blockchain</h3>
+                    <h2>Our Success Story With Blockchain</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, numquam nulla a vel nemo quidem et aliquam. Ad quia nulla laudantium. Animi sint libero, consequatur veritatis quas impedit hic ea.</p>
                     <div className="list-container flex-between">
                         {successData.map((item) => (
@@ -74,28 +71,31 @@ background-color:var(--blackColor);
 color:var(--whiteColor);
 padding:3rem;
 border-radius:10px;
-.col-l{
+
+.col-l{ 
     .card{
-        margin-bottom:1rem;
         background-color:var(--whiteColor);
         border-radius:5px;
         padding:1rem;
-        p,span,h3{
+        h3{
+            color:purple;
+        }
+        p{
             color:var(--blackColor);
         }
-        &:nth-child(1){
-            max-width:300px;
+        span{
+            background-color:lightgreen;
+            padding:.2rem;
+            border-radius:4px;
         }
-        &:nth-child(2){
-            max-width:150px;
-        }
-        &:nth-child(3){
-            max-width:300px;
-        }
+       
     }
     
 }
 .col-r{
+    p{
+        color:#ccc;
+    }
    .progress-container{
     width:100%;
     height:10px;

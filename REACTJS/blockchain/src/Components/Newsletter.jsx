@@ -1,40 +1,43 @@
 import React from 'react'
-import {styled} from "styled-components"
+import { styled } from "styled-components"
 const Newsletter = () => {
-  return (
-    <NewsletterWrapper>
-      <div className="heading">
-      <h3>Subscribe Newsletter</h3>
-      <span>Financial Transsaction used remotedely</span>
-      </div>
-        <form action="">
-            <div className="form-group flex-row">
-                <input type="text" placeholder='Enter your email' />
-                <button>Get Started</button>
+    return (
+        <NewsletterWrapper>
+            <div className="heading">
+                <h2>Subscribe Newsletter</h2>
+                <span>Financial Transsaction used remotedely</span>
             </div>
-        </form>
-    </NewsletterWrapper>
-  )
+            <form action="">
+                <div className="form-group flex-row">
+                    <input type="text" placeholder='Enter your email' />
+                    <button>Get Started</button>
+                </div>
+            </form>
+        </NewsletterWrapper>
+    )
 }
 
-const NewsletterWrapper= styled.section`
+const NewsletterWrapper = styled.section`
 background-color:var(--grayColor);
 padding:2rem;
 form{
     .form-group{
         gap:0;
         input{
-            width:70%;
+            flex:8;
         }
         button{
-            width:30%;
+       flex:2;
         background-color:var(--blackColor);
         color:var(--whiteColor);
-        padding:1rem 1.5rem;
+        padding:1rem 2rem;
         border-radius:5px;
     }
     }
-   
+}
+
+@media screen and (max-width:768px) {
+ 
 }
 `
 

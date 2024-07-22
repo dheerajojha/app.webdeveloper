@@ -70,6 +70,18 @@ background-color:var(--grayColor);
 }
 
 .row:nth-child(2){
+  .col:nth-child(1){
+   .socials{
+    gap:1rem;
+    span{
+      background-color:var(--blackColor);
+      color:var(--whiteColor);
+      padding:.5rem;
+      border-radius:50%;
+      display:flex;
+    }
+   }
+  }
 .col:nth-child(2){
   p{
   text-align:center;
@@ -78,6 +90,15 @@ background-color:var(--grayColor);
   margin-top:1rem;
  }
 }
+}
+
+@media screen and (max-width:768px) {
+  .row:nth-child(2){
+    .col:nth-child(1){
+      flex-direction:column;
+      gap:1rem;
+    }
+  } 
 }
 `
 

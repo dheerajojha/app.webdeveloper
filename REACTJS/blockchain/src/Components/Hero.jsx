@@ -6,8 +6,8 @@ const Hero = () => {
     return (
         <HeroContainer>
             <article>
-                <h1>Community Owned API of Block Chain</h1>
-                <p className='gap'>It is long established fact that reader will be distracted by thecontent of pages
+                <h1>Community <span>Owned API</span> of Block Chain</h1>
+                <p>It is long established fact that reader will be distracted by thecontent of pages
                     when looking at its layout
                 </p>
                 <button className='cta'>Get Started</button>
@@ -21,7 +21,7 @@ const Hero = () => {
 
 
 const HeroContainer = styled.div`
-background-image:url(${bg1});
+background-image:linear-gradient(rgba(0,0,0,0.7),rgba(255,255,255,0.3)),url(${bg1});
 width:100%;
 height:90vh;
 background-size:cover;
@@ -33,8 +33,15 @@ flex-direction:columns;
 article{
     max-width:600px;
     text-align:center;
+    span{
+        -webkit-text-fill-color:transparent;
+        -webkit-text-stroke:1px var(--whiteColor);
+    }
     h1,p{
         color:var(--whiteColor)
+    }
+    button{
+        margin-top:1rem;
     }
 }
 

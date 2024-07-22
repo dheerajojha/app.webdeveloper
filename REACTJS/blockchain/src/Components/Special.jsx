@@ -20,7 +20,7 @@ const Special = () => {
     return (
         <SpecialWrapper>
             <div className="heading">
-                <h3>Create Portfolic CryptoCurrency Portfolio Today</h3>
+                <h2>Create Portfolic CryptoCurrency Portfolio Today</h2>
                 <span>Things That make best place from trading.</span>
             </div>
 
@@ -58,6 +58,10 @@ const SpecialWrapper = styled.section`
     .card{
         .card-img{
         width:40px;
+        background-color:var(--grayColor);
+        padding:.5rem;
+        border-radius:5px;
+        box-shadow:0 10px 10px 0 rgba(0,0,0,0.2);
         }
     }
 }`

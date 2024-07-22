@@ -26,7 +26,7 @@ const Services = () => {
     <ServicesWrapper>
       <div className="row grid-2">
         <div className="col-l gap">
-          <h3>Trusted By the People Around the globe</h3>
+          <h2>Trusted By the People Around the globe</h2>
           <p>Lorem ipsum dolor, inesciunt. Rem maiores eaque similique tempora. Velit rerum illo qui laborum facilis iste eligendeniti!</p>
 
           {serviceData.map((item) => (
@@ -52,7 +52,11 @@ const Services = () => {
 const ServicesWrapper = styled.section`
 .col-l{
   .card-img{
-    width:4cqh;
+    width:40px;
+    background-color:var(--grayColor);
+    padding:.5rem;
+    border-radius:5px;
+    box-shadow:0 10px 10px 0 rgba(0,0,0,0.2);
   }
 }
 .col-r{
