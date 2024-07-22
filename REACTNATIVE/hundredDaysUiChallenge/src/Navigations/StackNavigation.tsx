@@ -1,9 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../Screens/Day034/HomeScreen';
-import BottomNavigation from './Day034/BottomNavigation';
-import SingleScreen from '../Screens/Day034/SingleScreen';
+import RegisterScreen from '../Screens/Day035/RegisterScreen';
+import LoginScreen from '../Screens/Day035/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -105,9 +104,13 @@ const StackNavigation: React.FC = () => {
 
         {/* <Stack.Screen name="RegisterScreen" component={RegisterScreen}/> */}
 
-        {/* created by @app.webdeveloper */}
-        <Stack.Screen name="BottomTab" component={BottomNavigation} />
-        <Stack.Screen name="single-screen" component={SingleScreen} />
+        {/* <Stack.Screen name="BottomTab" component={BottomNavigation} />
+        <Stack.Screen name="single-screen" component={SingleScreen} /> */}
+
+            {/* created by @app.webdeveloper */}
+
+            <Stack.Screen name="register" component={RegisterScreen}/>
+            <Stack.Screen name="login" component={LoginScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
