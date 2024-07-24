@@ -11,6 +11,15 @@ const LoginScreen = () => {
   const [toggleEyePassword, setToggleEyePassword] = useState(false)
   const [toggleEyeCnfPassword, setToggleEyeCnfPassword] = useState(false)
   const [toggleCheck, setToggleCheck] = useState(false)
+
+  
+  const loginHandler = ()=>{
+    try {
+      navigation.navigate('tabnavigation')
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <>
       <StatusBar backgroundColor={'#fff'} barStyle={'dark-content'} />
@@ -51,7 +60,7 @@ const LoginScreen = () => {
           </View>
 
           {/* button */}
-          <TouchableOpacity style={styles.cta}>
+          <TouchableOpacity style={styles.cta} onPress={loginHandler}>
             <Text style={styles.ctaText}>Sign in</Text>
           </TouchableOpacity>
 
