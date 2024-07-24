@@ -34,8 +34,8 @@ const Header = () => {
         </ul>
       </nav>
 
-      <div className="cta">
-        <button>Contact me</button>
+      <div className="btn">
+        <button className='cta'>Contact me</button>
       </div>
 
     </HeaderWrapper>
