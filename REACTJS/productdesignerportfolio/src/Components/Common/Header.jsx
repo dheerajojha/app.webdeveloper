@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components"
 import { Link, NavLink } from "react-router-dom"
+import { FaBars } from "react-icons/fa6";
+import { IoClose } from "react-icons/io5";
 const Header = () => {
+  const [toggleBtn, setToggleBtn] = useState(false)
   return (
     <HeaderWrapper>
       <div className="logo">
@@ -12,7 +15,7 @@ const Header = () => {
       </div>
 
       <nav>
-        <ul className='flex-row'>
+        <ul className={`flex-row ${toggleBtn && 'left-0'}`}>
           <li>
             <NavLink to='/'>Home</NavLink>
           </li>
@@ -33,6 +36,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div className="toggle-btn" onClick={() => setToggleBtn(!toggleBtn)}>
+        <span>{toggleBtn ? <IoClose />:<FaBars />}</span>
+      </div>
 
       <div className="btn">
         <button className='cta'>Contact me</button>
@@ -70,8 +76,54 @@ background-color:var(--secondry);
   }
 }
 nav{
-  a{
+  ul{
+  transition:.5s ease;
+    a{
     color:var(--white)
+  }
+  }
+}
+
+.toggle-btn{
+  display:none;
+  span{
+    display:flex;
+    color:var(--white);
+    font-size:24px;
+    border:1px solid var(--primary);
+    border-radius:5px;
+    padding:.6rem;
+    cursor:pointer;
+  }
+}
+
+.left-0{
+  left:0;
+}
+
+@media screen and (max-width:768px) {
+  nav{
+    ul{
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      width:100%;
+      height:100vh;
+      position:absolute;
+      top:15%;
+      left:-100%;
+      background-color:var(--primary);
+      padding:1rem;
+      border-radius:2px;
+      z-index:1000;
+      a{
+        line-height:3rem;
+      }
+
+    }
+  }
+  .toggle-btn{
+    display:block;
   }
 }
 `

@@ -24,8 +24,8 @@ const Services = () => {
   ])
   return (
     <ServicesWrapper>
-      <div className="flex-between">
-        <div className="heading">
+      <div className="left-heading flex-between">
+        <div>
           <span>Services</span>
           <h2>Services i Provide</h2>
         </div>
@@ -52,6 +52,12 @@ const Services = () => {
 }
 
 const ServicesWrapper = styled.section`
+.left-heading{
+  span{
+    color:var(--primary);
+    font-weight:600;
+  }
+}
 .card-container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -62,6 +68,17 @@ const ServicesWrapper = styled.section`
     padding:1rem;
     border-radius:5px;
    .card-img{width:40px;}
+    }
+}
+
+@media screen and (max-width:768px) {
+    .left-heading{
+        display:flex;
+        justify-content:center;
+        text-align:center;
+        button{
+            display:none;
+        }
     }
 }
 `

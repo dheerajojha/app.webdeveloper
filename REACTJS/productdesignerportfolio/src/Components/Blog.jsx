@@ -24,7 +24,7 @@ const Blog = () => {
     ])
     return (
         <BlogWrapper>
-            <div className="flex-between">
+            <div className="left-heading flex-between">
                 <div>
                     <span>Blogs</span>
                     <h2>Blog here</h2>
@@ -51,6 +51,12 @@ const Blog = () => {
 }
 
 const BlogWrapper = styled.section`
+.left-heading{
+  span{
+    color:var(--primary);
+    font-weight:600;
+  }
+}
 .card-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -60,8 +66,23 @@ const BlogWrapper = styled.section`
         background-color:var(--cardBg);
         border-radius:5px;
         padding:1rem;
+        a{
+            color:var(--primary);
+            font-weight:600;
+        }
     }
 
+}
+
+@media screen and (max-width:768px) {
+    .left-heading{
+        display:flex;
+        justify-content:center;
+        text-align:center;
+        button{
+            display:none;
+        }
+    }
 }
 `
 

@@ -12,5 +12,11 @@ import storybook from "./storybook.png"
 import blogpic1 from "./blogpic1.jpg"
 import blogpic2 from './blogpic2.jpg'
 import blogpic3 from './blogpic3.jpg'
-export {bg1,app,web,ux,aboutPic,ae,ps,figma,
-         invision,sketch,storybook,blogpic1,blogpic2,blogpic3}
+import testipic1 from './userpic1.png'
+import testipic2 from './userpic2.png'
+import testipic3 from './userpic3.png'
+import testipic4 from './userpic4.png'
+export {bg1,app,web,ux,aboutPic,ae,ps,figma,invision,
+    sketch,storybook,blogpic1,blogpic2,blogpic3,
+    testipic1,testipic2,testipic3,testipic4
+}

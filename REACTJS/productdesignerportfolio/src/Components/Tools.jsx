@@ -77,7 +77,7 @@ const Tools = () => {
 const ToolsWrapper = styled.section`
 .card-container{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:1rem;
   justify-content:center;
   .card{

@@ -5,7 +5,9 @@ import Services from "./Services"
 import About from "./About"
 import Tools from "./Tools"
 import Blog from "./Blog"
+import Contact from "./Contact"
+import Testimonial from "./Testimonial"
 
 
 
-export {Header,Footer,Hero,Services,About,Tools,Blog}
+export {Header,Footer,Hero,Services,About,Tools,Testimonial,Blog,Contact}
