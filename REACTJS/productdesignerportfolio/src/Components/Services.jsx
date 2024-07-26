@@ -61,6 +61,9 @@ const ServicesWrapper = styled.section`
     background-color:var(--cardBg);
     padding:1rem;
     border-radius:5px;
+    a{
+      color:var(--primary);
+    }
    .card-img{width:40px;}
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { bg1 } from '../assets/Images'
+import Marquee from 'react-fast-marquee'
 const Hero = () => {
     return (
         <HeroWrapper>
@@ -23,7 +24,9 @@ const Hero = () => {
             </div>
             <div className="row">
                 <div className="col">
-                    <h2>App Designer | Web desginer | Graphic Designer | WireFrame Expo | App Designer | Web </h2>
+                  <Marquee>
+                  <h2>App Designer | Web desginer | Graphic Designer | WireFrame Expo | App Designer | Web </h2>
+                  </Marquee>
                 </div>
                 <div className="col">
                 </div>
@@ -81,7 +84,7 @@ const HeroWrapper = styled.div`
             h2{
                 text-align:center;
                 -webkit-text-fill-color:transparent;
-                -webkit-text-stroke:1px var(--secondry);
+                -webkit-text-stroke:1px var(--white);
             }
           
         }

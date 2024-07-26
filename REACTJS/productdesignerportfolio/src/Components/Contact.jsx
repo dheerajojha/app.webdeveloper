@@ -82,7 +82,7 @@ const Contact = () => {
 
 const ContactWrapper = styled.section`
 display:grid;
-grid-template-columns:40% 60%;
+grid-template-columns:39.5% 59.5%;
 gap:1rem;
 .col-l{  
 .left-heading{
@@ -111,6 +111,9 @@ gap:1rem;
             label{
                 display:block;
                 margin-bottom:.3rem;
+            }
+            input,select,textarea{
+                width:100%;
             }
         }
     }

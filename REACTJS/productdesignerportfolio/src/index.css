@@ -57,7 +57,8 @@ a {
     background-color: var(--white);
     color: var(--black);
     font-size: 1rem;
-    border: 1px solid var(--black)
+    border: 1px solid var(--black);
+    transition:.5s ease;
 }
 
 .cta-green {
@@ -66,6 +67,17 @@ a {
     background-color: var(--secondry);
     color: var(--white);
     font-size: 1rem;
+    transition:.5s ease;
+}
+.cta:hover {
+ background-color: var(--primary);
+ color:var(--white)
+}
+
+.cta-green:hover {
+    background-color: var(--white);
+    color:var(--black);
+    border:1px solid var(--black);
 }
 
 header {
@@ -136,7 +148,6 @@ select {
     border: 1px solid gray;
     padding: 1rem 1.2rem;
     border-radius: 5px;
-    width: 100%;
     background-color: var(--cardBg);
 }
 

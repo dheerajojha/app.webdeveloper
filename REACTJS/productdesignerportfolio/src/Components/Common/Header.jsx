@@ -65,7 +65,7 @@ background-color:var(--secondry);
       padding:.5rem;
       border-radius:50%;
       -webkit-text-fill-color:transparent;
-      -webkit-text-stroke:1px var(--white);
+      -webkit-text-stroke:1px var(--black);
       width:40px;
       height:40px;
       display:flex;
