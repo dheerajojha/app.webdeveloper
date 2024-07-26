@@ -36,6 +36,7 @@ const Hero = () => {
 }
 
 const HeroWrapper = styled.div`
+overflow-x:hidden;
 .row{
     /* row-1 */
     &:nth-child(1){
