@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <ContactWrapper>
             <div className="col-l">
-                <div className='left-heading'>
+                <div className='left-heading gap'>
                     <span>Contact us</span>
                     <h2>Lets Talk For Your Next Project</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, quam sed doae distinctio.</p>
@@ -87,10 +87,6 @@ gap:1rem;
 .col-l{  
 .left-heading{
     margin-bottom:2rem;
-    span{
-        color:var(--primary);
-        font-weight:600;
-    }
 }
         a{
             display:block;

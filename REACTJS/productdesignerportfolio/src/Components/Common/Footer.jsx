@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { IoSend } from "react-icons/io5";
 const Footer = () => {
   return (
     <FooterWrapper>
@@ -32,9 +33,9 @@ const Footer = () => {
       </div>
       <div className="col">
         <h3>Get Latest Information</h3>
-        <div className="form-group flex-row">
+        <div className="form-group">
           <input type="text" placeholder='Contact' />
-          <button>move</button>
+          <button><IoSend /></button>
         </div>
       </div>
     </FooterWrapper>
@@ -55,7 +56,23 @@ const FooterWrapper = styled.footer`
     display:block;
     line-height:2rem;
   }
+  button{
+    background-color:var(--secondry);
+    padding:1rem;
+    size:24px;
+    border-radius:5px;
+    display:flex;
+    color:var(--white)
+  }
+
+  &:nth-child(4){
+.form-group{
+  display:flex;
+  align-items:center;
 }
+  }
+}
+
 
 @media screen and (max-width:768px) {
   grid-template-columns:1fr;

@@ -52,12 +52,6 @@ const Services = () => {
 }
 
 const ServicesWrapper = styled.section`
-.left-heading{
-  span{
-    color:var(--primary);
-    font-weight:600;
-  }
-}
 .card-container{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));

@@ -51,12 +51,6 @@ const Blog = () => {
 }
 
 const BlogWrapper = styled.section`
-.left-heading{
-  span{
-    color:var(--primary);
-    font-weight:600;
-  }
-}
 .card-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));

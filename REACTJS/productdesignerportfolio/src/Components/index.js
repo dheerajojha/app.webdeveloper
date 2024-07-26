@@ -7,7 +7,8 @@ import Tools from "./Tools"
 import Blog from "./Blog"
 import Contact from "./Contact"
 import Testimonial from "./Testimonial"
+import Faq from "./Faq"
 
 
 
-export {Header,Footer,Hero,Services,About,Tools,Testimonial,Blog,Contact}
+export {Header,Footer,Hero,Services,About,Tools,Testimonial,Blog,Contact,Faq}

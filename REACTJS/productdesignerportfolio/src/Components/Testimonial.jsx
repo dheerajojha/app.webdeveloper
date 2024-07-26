@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FaStar, FaRegStar, FaStarHalf } from "react-icons/fa"
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination,Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { testipic1, testipic2, testipic3, testipic4 } from '../assets/Images'
 const Testimonial = () => {
@@ -65,9 +63,7 @@ const Testimonial = () => {
                 <h2>Client Testimonial</h2>
             </div>
 
-            <Swiper modules={[Autoplay, Navigation,Pagination]}
-                navigation
-                pagination
+            <Swiper modules={[Autoplay]}
                 slidesPerView={3}
                 loop={true}
                 autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
@@ -114,31 +110,6 @@ const TestimonialWrapper = styled.section`
     }
    
 }
-.swiper{
-    .swiper-button-prev,
-		.swiper-button-next {
-			border: 1px solid var(--primary);
-            color:var(--primary);
-			padding: 2.5rem 1.3rem;
-			background: transparent;
-			border-radius: 5px;
-			transition: all 0.5s ease;
-			bottom:5%;
-			&:hover {
-				background: var(--primary);
-				color: var(--white);
-			}
-		}
-}
-
-@media screen and (max-width: 768px) {
-		.swiper {
-			.swiper-button-prev,
-			.swiper-button-next {
-				display: none;
-			}
-		}
-	}
 `
 
 export default Testimonial
