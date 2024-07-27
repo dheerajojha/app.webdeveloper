@@ -1,0 +1,115 @@
+
+:root{
+  --primary:#0a193b;
+  --secondry:#f5fafe;
+  --white:#ffffff;
+  --black:#000000;
+  --gray:#f1f2f3;
+  --fiftyFivePx:55px;
+  --thirtyFivePix:35px;
+  --twentyFourPx:24px;
+  --sixteenPx:16px;
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1{
+  font-size: var(--fiftyFivePx);
+  font-weight: 700;
+}
+
+h2{
+  font-size: var(--thirtyFivePix);
+  font-weight: 600;
+}
+h3{
+  font-size: var(--twentyFourPx);
+  font-weight: 500;
+}
+
+p{
+  font-size: var(--sixteenPx);
+  font-weight: 300;
+  line-height: 1.6rem;
+}
+
+a{
+  text-decoration: none;
+  color:var(--black)
+}
+
+.flex-row-s{
+  display: flex;
+  align-items: center;
+  gap:.2rem;
+}
+.flex-row-m{
+  display: flex;
+  align-items: center;
+  gap:1rem;
+}
+
+.flex-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-4-footer{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+}
+
+.grid-4{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  align-items: center;
+  gap:1rem;
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  align-items: center;
+  gap:1rem;
+}
+.cta{
+  padding:1rem 2rem;
+  background-color: var(--primary);
+  color:var(--white);
+  border-radius:3px;
+  color: var(--white);
+  font-size: 16px;
+}
+
+.heading{
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.heading-left{
+  margin-bottom: 4rem;
+}
+header{
+  padding:20px 8%;
+}
+
+section{
+padding:80px 0;
+width:80%;
+margin:auto;
+}
+img{
+  width:100%;
+  display:flex;
+  border-radius: 3px;
+}
+
+

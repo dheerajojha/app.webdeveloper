@@ -1,0 +1,7 @@
+.hero-wrapper{
+ background-image:linear-gradient(rgba(65, 95, 140, 0.2),rgba(46, 51, 106, 0.2)),url('/herobg.jpg');
+height:100vh;
+width:100%;
+background-position:center;
+background-size:cover;
+}

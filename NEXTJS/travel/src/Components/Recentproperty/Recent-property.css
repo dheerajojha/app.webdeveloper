@@ -1,0 +1,24 @@
+.recent-property-wrapper {
+    background-color: var(--secondry);
+}
+
+.recent-property-wrapper .card {
+    padding: 1rem;
+    background-color: var(--white);
+    border:1px solid var(--primary)
+}
+
+.recent-property-wrapper .card span {
+    padding:.6rem 1.6rem;
+    background-color: var(--secondry);
+    border:1px solid var(--black);
+    color:var(--black);
+    border-radius: 30px;
+}
+
+.recent-property-wrapper .card button {
+    padding:.6rem 1.6rem;
+    background-color: var(--black);
+    color:var(--white);
+    border-radius: 30px;
+}

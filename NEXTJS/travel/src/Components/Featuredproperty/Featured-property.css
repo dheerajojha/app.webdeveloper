@@ -1,0 +1,14 @@
+.featured-property-wrapper .card {
+    position: relative;
+}
+
+.featured-property-wrapper .card .card-body {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: var(--white);
+    padding:1rem;
+    border-radius:5px;
+    width:90%;
+}

@@ -1,0 +1,11 @@
+.achievement-wrapper{
+    background-color: var(--secondry);
+}
+
+.achievement-wrapper .card{
+    text-align: center;
+}
+
+.achievement-wrapper .card span{
+font-size: 24px;
+}
