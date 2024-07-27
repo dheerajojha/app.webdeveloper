@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RegisterScreen from '../Screens/Day035/RegisterScreen';
 import LoginScreen from '../Screens/Day035/LoginScreen';
 import BottomTabNavigation from './Day035/BottomTabNavigation';
+import DetailScreen from '../Screens/Day035/DetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -113,6 +114,7 @@ const StackNavigation: React.FC = () => {
             <Stack.Screen name="register" component={RegisterScreen}/>
             <Stack.Screen name="login" component={LoginScreen}/>
             <Stack.Screen name='tabnavigation' component={BottomTabNavigation}/>
+            <Stack.Screen name='pickupdetail' component={DetailScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

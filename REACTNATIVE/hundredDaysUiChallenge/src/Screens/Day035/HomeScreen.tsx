@@ -1,24 +1,28 @@
-import { StyleSheet, Text, View, Image, TextInput, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import AntIcon from "react-native-vector-icons/AntDesign"
 import FeatherIcon from "react-native-vector-icons/Feather"
 import EntIcon from "react-native-vector-icons/Entypo"
 import GlobalStyles from '../../Constants/GlobalStyles'
+import LottieView from 'lottie-react-native'
+import {useNavigation} from "@react-navigation/native"
 const HomeScreen = () => {
+  const navigation:any = useNavigation()
   return (
     <SafeAreaView style={styles.homeWrapper}>
       {/* header start */}
       <View style={GlobalStyles.flexBetween}>
         <View style={GlobalStyles.flexRow}>
-          <Text>user</Text>
-          {/* <Image source={}/> */}
+          <LottieView source={require('../../Assets/Animations/user.json')} loop={true} autoPlay={true} style={{width:80,height:80}}/>
           <View >
-            <Text>Jason Green</Text>
+            <Text style={styles.h2}>Jason Green</Text>
             <Text>Jampra id</Text>
           </View>
         </View>
-        <AntIcon name='bells' size={20} />
+     <Pressable style={styles.iconContainer}>
+     <AntIcon name='bells' size={20} />
+     </Pressable>
       </View>
 
       <View style={{ backgroundColor: '#f44147', padding: 30, borderRadius: 20, }}>
@@ -27,16 +31,16 @@ const HomeScreen = () => {
       </View>
 
       <Text style={styles.h2}>Track your shiping</Text>
-      <View style={[GlobalStyles.flexRow, { borderWidth: 1, borderColor: 'gray', padding: 6, borderRadius: 5 }]}>
+      <View style={[GlobalStyles.flexRow, { borderWidth: 1, borderColor: 'gray', padding: 6, borderRadius: 30 }]}>
         <AntIcon name='search1' size={24} />
-        <TextInput placeholder='Search Your Favorite songs' style={{ width: '80%' }} />
+        <TextInput placeholder='Search Your Favorite songs' style={{ width: '76%' }} />
         <Pressable style={{ backgroundColor: '#f44147', padding: 10, borderRadius: 30 }}>
           <AntIcon name='filter' size={24} color='#fff' />
         </Pressable>
       </View>
 
       <View style={GlobalStyles.flexRow}>
-        <Pressable style={[styles.card,{height:120}]}>
+        <Pressable style={[styles.card,{height:100}]}>
           <View style={styles.iconContainer}>
             <FeatherIcon name='package' color="#f44147" size={24} />
           </View>
@@ -44,7 +48,7 @@ const HomeScreen = () => {
         </Pressable>
 
 
-        <Pressable style={[styles.card,{height:120}]}>
+        <Pressable style={[styles.card,{height:100}]}>
           <View style={styles.iconContainer}>
             <EntIcon name='price-tag' color="#f44147" size={24} />
           </View>
@@ -57,7 +61,7 @@ const HomeScreen = () => {
         <Text>See All</Text>
       </View>
 
-      <View style={[styles.card,GlobalStyles.flexBetween]}>
+      <TouchableOpacity onPress={()=>(navigation.navigate('pickupdetail'))} style={[styles.card,GlobalStyles.flexBetween]}>
         <View style={{ gap: 20 }}>
           <Pressable style={styles.buttonContainer}>
             <Text style={{color:'#fff'}}>View All</Text>
@@ -66,7 +70,7 @@ const HomeScreen = () => {
           <Text>#9388703039-3903392</Text>
         </View>
         <Image source={require('../../Assets/Images/Day035/box.png')} style={{maxHeight:130,maxWidth:130}} />
-      </View>
+      </TouchableOpacity>
 
     </SafeAreaView>
   )
