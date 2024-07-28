@@ -1,3 +1,4 @@
+import { Downloadapp } from '@/Components'
 import Achievement from '@/Components/Achievement/Achievement'
 import Featuredproperty from '@/Components/Featuredproperty/Featured-property'
 import Hero from '@/Components/Hero/Hero'
@@ -11,6 +12,7 @@ const page = () => {
     <Achievement/>
     <Featuredproperty/>
     <Recentproperty/>
+    <Downloadapp/>
     </>
   )
 }
