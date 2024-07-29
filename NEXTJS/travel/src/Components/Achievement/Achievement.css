@@ -1,5 +1,6 @@
 .achievement-wrapper{
     background-color: var(--secondry);
+    padding:40px 8%;
 }
 
 .achievement-wrapper .card{
@@ -8,4 +9,5 @@
 
 .achievement-wrapper .card span{
 font-size: 24px;
+color:var(--primary);
 }

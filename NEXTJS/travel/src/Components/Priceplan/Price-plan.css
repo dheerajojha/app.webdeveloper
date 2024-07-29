@@ -1,0 +1,25 @@
+.price-plan-wrapper .card{
+    background-color: var(--secondry);
+    padding:1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px var(--primary);
+}
+
+.price-plan-wrapper .card .card-body{
+    background-color: var(--primary);
+    color:var(--white);
+    padding:1rem;
+}
+
+.price-plan-wrapper .card .card-body{
+    background-color: var(--primary);
+    color:var(--white);
+    padding:1rem;
+}
+
+.price-plan-wrapper .card .card-body button{
+    background-color: var(--white);
+    color:var(--black);
+    padding:.7rem 1.5rem;
+    border-radius: 5px;
+}

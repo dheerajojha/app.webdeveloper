@@ -1,20 +1,28 @@
-footer{
-    .row-1{
-        padding:40px 8%;
-        a{
-          display:block;
-          line-height:2rem;
-        }
-        h4{
-          margin-bottom:1.5rem;
-        }
-      }
-      .row-2{
-        .col{
-          background-color:var(--primary);
-          color:var(--white);
-          text-align:center;
-          padding:.8rem;
-        }
-      }
+footer .row-1 {
+  padding: 40px 8%;
+}
+
+footer .row-1 a {
+  display: block;
+  line-height: 2rem;
+}
+
+footer .row-1 h4 {
+  margin-bottom: 1.5rem;
+}
+
+footer .row-1 h4 {
+  margin-bottom: 1.5rem;
+}
+
+footer .row-1 .logo {
+ font-size: 24px;
+ font-weight: 600;
+}
+
+.row-2 .col {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: .8rem;
 }

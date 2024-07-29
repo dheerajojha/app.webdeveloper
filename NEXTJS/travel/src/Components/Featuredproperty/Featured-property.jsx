@@ -13,7 +13,7 @@ const Featuredproperty = () => {
         price: 1000,
         category: 'rent',
         recent: false,
-        image: '/Images/fp1.jpg'
+        image: '/Images/fp2.jpg'
     },
     {
         id: 2,
@@ -24,7 +24,7 @@ const Featuredproperty = () => {
         price: 1000,
         category: 'rent',
         recent: false,
-        image: '/Images/fp2.jpg'
+        image: '/Images/fp1.jpg'
     },
     {
         id: 3,
@@ -77,13 +77,13 @@ const Featuredproperty = () => {
             <div className="heading-left">
                 <h2>Featured Property</h2>
             </div>
-            <div className="card-container grid-3">
+            <div className="card-container">
                 {fProperty.filter((val) => (
                     val.recent != true
                 )).map((item) => (
-                    <div className="card" key={item.id}>
+                    <div className={`card ${item.id ==1 && 'card-span'}`} key={item.id}>
                         <div className="card-image">
-                            <Image src={item.image} width={200} height={200} />
+                        <Image src={item.image} width={200} height={200} objectFit="cover" alt={item.title} />
                         </div>
                         <div className="card-body">
                             <h3>{item.title}</h3>

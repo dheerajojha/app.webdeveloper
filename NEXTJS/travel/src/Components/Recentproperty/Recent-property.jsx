@@ -73,7 +73,7 @@ const Recentproperty = () => {
 
     ])
     return (
-        <section className="recent-property-wrapper">
+        <div className="recent-property-wrapper">
             <div className="heading">
                 <h2>Recent Property</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam in adihenderit repellat unde!</p>
@@ -82,7 +82,7 @@ const Recentproperty = () => {
                 {rProperty.filter((val) => (
                     val.recent == true
                 )).map((item) => (
-                    <div className="card" key={item.id}>
+                    <div className="card gap" key={item.id}>
                         <div className="card-image">
                             <Image src={item.image} width={200} height={200} />
                         </div>
@@ -104,7 +104,7 @@ const Recentproperty = () => {
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     )
 }
 

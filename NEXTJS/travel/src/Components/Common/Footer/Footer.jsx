@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="row-1 grid-4-footer">
         <div className="col">
-          <Link href='/'>Dreamy</Link>
+          <Link href='/' className='logo'>Dreamy</Link>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse amet exercitationem nam aliquid ratione aut, voluptas hic repellendus aliquam adipisci reiciendis ullam repudiandae accusamus a error, maiores vitae dolor asperiores!</p>
         </div>
         <div className="col">

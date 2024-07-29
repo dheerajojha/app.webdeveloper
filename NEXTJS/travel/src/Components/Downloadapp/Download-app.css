@@ -22,4 +22,10 @@
     max-height:60px;
  
   }
+
+  @media screen and (max-width:768px){
+   .download-app-wrapper{
+    gap:5rem;
+    }
+  }
  

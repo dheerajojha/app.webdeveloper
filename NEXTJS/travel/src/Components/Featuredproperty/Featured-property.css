@@ -1,14 +1,43 @@
+.featured-property-wrapper .card-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 300px 300px;
+    gap:1rem;
+}
+
 .featured-property-wrapper .card {
     position: relative;
-}
+} 
+
+.featured-property-wrapper .card .card-image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .featured-property-wrapper .card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
 .featured-property-wrapper .card .card-body {
     position: absolute;
-    bottom: 25%;
+    bottom: 80px;
     left: 50%;
     transform: translate(-50%, 50%);
     background-color: var(--white);
     padding:1rem;
     border-radius:5px;
     width:90%;
+}
+
+.featured-property-wrapper .card-span {
+    grid-row: 1/3;
+}
+
+@media screen and (max-width:768px) {
+    .featured-property-wrapper .card-container {
+       grid-template-columns: 1fr;
+    }
+    
 }

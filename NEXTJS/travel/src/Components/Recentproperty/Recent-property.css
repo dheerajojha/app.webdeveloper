@@ -1,5 +1,6 @@
 .recent-property-wrapper {
     background-color: var(--secondry);
+    padding:40px 8%;
 }
 
 .recent-property-wrapper .card {

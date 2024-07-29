@@ -24,7 +24,7 @@ const Header = () => {
       </nav>
 
       <button className='sign-in-desktop cta'>Sign in</button>
-      <span onClick={()=>setToggleBar(!toggleBar)} className='bar'>{toggleBar ? <FaBars />:<IoMdClose />}</span>
+      <span onClick={()=>setToggleBar(!toggleBar)} className='bar'>{toggleBar ? <IoMdClose />:<FaBars  />}</span>
     </header>
   )
 }
