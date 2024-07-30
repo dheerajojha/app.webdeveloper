@@ -15,13 +15,10 @@ header .hero-bar{
 font-size: 24px;
 color:var(--white);
 background-color: var(--primary);
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
-width:50px;
-height:50px;
-align-content:center;
-text-align:center;
-display: none;
+border-top-right-radius: 10px;
+border-bottom-left-radius: 10px;
+padding:.4rem;
+display:none;
 cursor: pointer;
  }
 
@@ -51,7 +48,7 @@ cursor: pointer;
         display: none;
      }
      header .hero-bar {
-        display:block;
+        display:flex;
      }
 
 }

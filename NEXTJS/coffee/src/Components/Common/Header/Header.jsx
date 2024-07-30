@@ -29,9 +29,9 @@ const Header = () => {
         <button className='cta'>Register</button>
       </div>
 
-      <div className="hero-bar" onClick={()=>setToggleBar(!toggleBar)}>
-        <span>{toggleBar ? <IoCloseSharp /> : < FaBars/>}</span>
-      </div>
+    
+        <span className='hero-bar' onClick={()=>setToggleBar(!toggleBar)}>{toggleBar ? <IoCloseSharp /> : < FaBars/>}</span>
+    
     </header>
   )
 }

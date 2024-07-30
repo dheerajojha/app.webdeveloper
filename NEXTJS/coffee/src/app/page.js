@@ -1,4 +1,4 @@
-import { About, Exploremore, Hero, Newsletter, Testimonial } from '@/Components'
+import { About, Exploremore, Hero, Newsletter, Product, Testimonial } from '@/Components'
 import React from 'react'
 
 const page = () => {
@@ -7,6 +7,7 @@ const page = () => {
     <Hero/>
     <About/>
     <Exploremore/>
+    <Product/>
     <Testimonial/>
    <Newsletter/>
     </>

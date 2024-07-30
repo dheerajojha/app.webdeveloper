@@ -5,5 +5,6 @@ import About from "./About/About.jsx"
 import Exploremore from "./Exploremore/Exploremore.jsx"
 import Testimonial from "./Testimonial/Testimonial.jsx"
 import Newsletter from "./Newsletter/Newsletter.jsx"
+import Product from "./Products/Product.jsx"
 
-export {Header,Footer,Hero,About,Exploremore,Testimonial,Newsletter}
+export {Header,Footer,Hero,About,Exploremore,Testimonial,Newsletter,Product}

@@ -147,9 +147,6 @@ section {
   margin: auto;
   padding:60px 0;
 }
-/* footer{
-  padding:20px 8%;
-} */
 img{
   width:100%;
   display: flex;
@@ -180,4 +177,5 @@ img{
   .cta,.cta-white{
     padding:.8rem 1.2rem;
   }
+
 }
