@@ -1,0 +1,16 @@
+.hero-wrapper .row-1 .col-l span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.hero-wrapper .row-2 p {
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.hero-wrapper .row-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+}
+
+@media screen and (max-width:768px) {}

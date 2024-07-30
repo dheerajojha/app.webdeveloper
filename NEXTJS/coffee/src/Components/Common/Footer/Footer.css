@@ -1,0 +1,34 @@
+footer .row-1 {
+    background-color: var(--secondry);
+    padding: 10px 8%;
+}
+
+
+footer .row-1 .col:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+
+footer .row-1 .col:last-child {
+    display: flex;
+    justify-content: end;
+}
+
+
+footer .row-2 {
+    background-color: var(--primary);
+    text-align: center;
+    color: var(--white);
+    padding: 10px 8%;
+}
+
+@media screen and (max-width:1024px) {
+    footer .row-1 .col:last-child {
+        display: flex;
+        justify-content: start;
+    }
+    footer .row-1 .col:nth-child(2) {
+        display: flex;
+        justify-content: start;
+    }
+}

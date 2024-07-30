@@ -1,0 +1,6 @@
+.exploremore-wrapper .col-r {
+border:1px solid var(--primary);
+padding:1rem;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+}

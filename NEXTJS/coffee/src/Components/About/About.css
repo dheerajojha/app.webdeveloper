@@ -1,0 +1,19 @@
+.about-wrapper .col-l{
+border:1px solid var(--primary);
+padding:1rem;
+border-top-right-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+
+.about-wrapper .col-l .image-gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 1rem;
+}
+
+.about-wrapper .col-l .image-gallery-container img:last-child {
+    width: 100%;
+    height: 100%;
+    grid-column: 1/3;
+}

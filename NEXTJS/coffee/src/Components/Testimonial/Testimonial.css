@@ -1,0 +1,15 @@
+.testimonial-wrapper{
+    background-color: var(--secondry);
+}
+
+.testimonial-wrapper .card{
+    background-color: var(--white);
+    padding:1rem;
+}
+
+.testimonial-wrapper .card .card-body {
+   margin-bottom: 1rem;
+ }
+.testimonial-wrapper .card .card-footer p{
+   font-weight: 600;
+}
