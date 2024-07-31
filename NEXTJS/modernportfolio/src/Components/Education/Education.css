@@ -1,0 +1,20 @@
+.education-wrapper .card{
+background-color: var(--gray);
+padding:1rem;
+border-radius: 5px;
+}
+
+
+.education-wrapper .card .card-header span{
+    background-color: var(--primary);
+    padding:.6rem;
+    border-radius:50%;
+    color:var(--white);
+    display:flex;
+    }
+
+.education-wrapper .card .flex-between p{
+    background-color: var(--white);
+    padding:.6rem;
+    border-radius: 5px;
+    }

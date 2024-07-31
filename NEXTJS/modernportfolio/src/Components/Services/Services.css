@@ -1,0 +1,25 @@
+.services-wrapper{
+    padding:40px 8%;
+    background:var(--primary);
+    color: var(--white);
+}
+
+.services-wrapper .card{
+    background-color: var(--secondry);
+    padding:1rem;
+    border-radius: 10px;
+}
+
+.services-wrapper .card .card-img{
+   background-color: var(--primary);
+   padding:1rem;
+   width:40px;
+   height:40px;
+   display: grid;
+   place-content: center;
+   border-radius: 50%;
+ }
+
+.services-wrapper .card a{
+   color:var(--white)
+}
