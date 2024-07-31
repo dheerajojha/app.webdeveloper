@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import './Header.css'
 import {FaBars} from "react-icons/fa"
+import { IoCloseSharp } from "react-icons/io5";
 const Header = () => {
   const[toggleBar,setToggleBar]=useState(false)
   return (
@@ -27,7 +28,7 @@ const Header = () => {
       </div>
 
       <span className="header-bar" onClick={()=>(setToggleBar(!toggleBar))}>
-        {toggleBar ? <FaBars/>: <FaBars/>}
+        {toggleBar ? <IoCloseSharp />: <FaBars/>}
       </span>
     </header>
   )
