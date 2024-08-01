@@ -1,4 +1,4 @@
-import { About, Education, Hero, Services, Testimonial } from '@/Components'
+import { About, Blog, Education, Faq, Hero, Newsletter, Services, Testimonial } from '@/Components'
 import React from 'react'
 
 const page = () => {
@@ -9,6 +9,9 @@ const page = () => {
     <About/>
     <Education/>
     <Testimonial/>
+    <Blog/>
+    <Faq/>
+    <Newsletter/>
     </>
   )
 }

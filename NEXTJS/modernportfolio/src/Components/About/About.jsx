@@ -6,7 +6,7 @@ const About = () => {
     return (
         <section className="about-wrapper grid-2">
             <div className="col-l">
-               <Image src='/Images/aboutpic.png' width={400} height={500}/>
+               <Image src='/Images/aboutpic.png' layout='responsive' alt='aboutpic' width={500} height={500}/>
             </div>
             <div className="col-r gap">
                 <div className="heading-right gap">
@@ -32,7 +32,6 @@ const About = () => {
                     <button className='cta'>
                         <span><FaArrowRight /></span>
                         <small>Download Now</small>
-
                     </button>
 
                 </div>

@@ -5,4 +5,7 @@ import Services from "./Services/Services";
 import About from "./About/About";
 import Education from "./Education/Education";
 import Testimonial from "./Testimonial/Testimonial";
-export {Header,Footer,Hero,Services,About,Education,Testimonial}
+import Blog from "./Blog/Blog";
+import Newsletter from "./Newsletter/Newsletter";
+import Faq from "./Faq/Faq";
+export {Header,Footer,Hero,Services,About,Education,Testimonial,Blog,Newsletter,Faq}

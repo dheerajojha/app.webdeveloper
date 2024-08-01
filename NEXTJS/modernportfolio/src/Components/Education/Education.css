@@ -5,6 +5,13 @@ border-radius: 5px;
 }
 
 
+.education-wrapper .card .card-header{
+   display: flex;
+   align-items: center;
+   gap:.6rem;
+    }
+
+
 .education-wrapper .card .card-header span{
     background-color: var(--primary);
     padding:.6rem;

@@ -12,7 +12,7 @@ const Hero = () => {
       {/* hero img start */}
       <div className="hero-img">
         <span className='triangle' />
-        <Image src='/Images/heropic2.png' width={200} height={400} />
+        <Image src='/Images/heropic2.png' alt='heropic' width={400} height={400} />
         <div className="hero-btn">
           <button className='cta'>
             <small>Portfolio</small>

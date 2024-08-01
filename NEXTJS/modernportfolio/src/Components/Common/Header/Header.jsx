@@ -12,7 +12,7 @@ const Header = () => {
         <Link href=''>Tenny</Link>
       </div>
       <nav>
-        <ul className={`flex-row-md ${toggleBar && 'top-60'}`}>
+        <ul className={`flex-row-md ${toggleBar && 'top-10'}`}>
           <li><Link href=''>Home</Link></li>
           <li><Link href=''>Services</Link></li>
           <li><Link href=''>About</Link></li>

@@ -41,7 +41,7 @@ const Testimonial = () => {
 
             <Swiper modules={[Autoplay]} autoplay>
                 {testimonial.map((item) => (
-                    <SwiperSlide className='card'>
+                    <SwiperSlide className='card' key={item.id}>
                         <div className="card-body" key={item.id}>
                             {Array.from({ length: item.rating }, (_, index) => (
                                 <span key={index}>{<FaStar />}</span>

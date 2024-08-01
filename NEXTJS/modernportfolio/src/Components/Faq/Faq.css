@@ -1,0 +1,24 @@
+.faq-wrapper .faq {
+    background-color: var(--secondry);
+    margin-bottom: 1rem;
+}
+
+.faq-wrapper .faq .faq-body {
+    background-color: var(--secondry);
+    padding: 1rem;
+}
+
+.faq-wrapper .faq .faq-body span {
+    background-color: var(--primary);
+    color:var(--white);
+    padding:.8rem;
+    border-radius: 4px;
+    display: flex;
+    cursor: pointer;
+}
+
+.faq-wrapper .faq .faq-footer {
+    background-color: var(--tertiary);
+    padding: 1rem;
+
+}

@@ -55,14 +55,14 @@ const Education = () => {
       </div>
       <div className="card-container grid-2">
         <div className="card gap">
-          <div className="card-header flex-row-md">
+          <div className="card-header">
             <span><FaBookReader /></span>
             <h3>Education</h3>
           </div>
           {education.filter((f) => (
             f.type === 'education'
           )).map((item) => (
-            <div className="card-body">
+            <div className="card-body" key={item.id}>
               <div className="flex-between">
                 <h4>{item.subtitle}</h4>
                 <p>{item.duration}</p>
@@ -73,14 +73,14 @@ const Education = () => {
         </div>
 
         <div className="card gap">
-          <div className="card-header flex-row-md">
+          <div className="card-header">
             <span><IoBagHandleSharp /></span>
             <h3>Experience</h3>
           </div>
           {education.filter((f) => (
             f.type === 'experience'
           )).map((item) => (
-            <div className="card-body">
+            <div className="card-body" key={item.id}>
               <div className="flex-between">
                 <h4>{item.subtitle}</h4>
                 <p>{item.duration}</p>
