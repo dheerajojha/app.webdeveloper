@@ -55,14 +55,22 @@ a {
 }
 
 .cta {
-  padding: .4rem 1.8rem;
+  padding: .4rem 1.8rem .4rem .2rem;
   border-radius: 30px;
   background-color: var(--primary);
   color: var(--white);
   display: flex;
   align-items: center;
+  transition: .5s ease;
   gap: .5rem;
+  cursor: pointer;
 }
+.cta:hover {
+  background-color: var(--tertiary);
+  color:var(--black)
+ 
+}
+
 
 .cta span {
   background-color: var(--tertiary);

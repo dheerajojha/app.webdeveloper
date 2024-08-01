@@ -15,8 +15,8 @@ const Hero = () => {
         <Image src='/Images/heropic2.png' alt='heropic' width={400} height={400} />
         <div className="hero-btn">
           <button className='cta'>
-            <small>Portfolio</small>
             <span><FaArrowRight /></span>
+            <small>Portfolio</small>
           </button>
           <button className='cta-white'>Hire me</button>
         </div>

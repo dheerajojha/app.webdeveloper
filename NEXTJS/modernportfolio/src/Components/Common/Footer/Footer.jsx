@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="row-1">
         <div className="col gap">
           <div className="logo">
-            <Link href=''>Jenny</Link>
+            <Link href=''>Tenny</Link>
           </div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nihil sit distinctio, consequatur ipsum nobis a aliquam suscipit in natus fugiat consequuntur architecto ipsam maiores nulls molestias!</p>
           <div className="social flex-row-md">

@@ -20,7 +20,7 @@ const Blog = () => {
         description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora ex aliquam accusantium esse nam sit pariatur, aliquid officia non et! Aperiam, enim facilis facere in dolor saepe velit sit perferendis?",
         user: "Suniyo Jain",
         date: '11-12-2023',
-        image: '/Images/blogpic3.jpg',
+        image: '/Images/blogpic7.png',
         category: 'Web Design',
     },
     {
