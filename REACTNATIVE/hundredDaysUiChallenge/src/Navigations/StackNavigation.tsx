@@ -1,10 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import RegisterScreen from '../Screens/Day035/RegisterScreen';
-import LoginScreen from '../Screens/Day035/LoginScreen';
-import BottomTabNavigation from './Day035/BottomTabNavigation';
-import DetailScreen from '../Screens/Day035/DetailScreen';
+import BottomTabNavigation from './Day036/BottomTabNavigation';
+import GetstartedScreen from '../Screens/Day036/GetstartedScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +11,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="BottomTabNavigation">
+        initialRouteName="getstarted">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -109,12 +107,16 @@ const StackNavigation: React.FC = () => {
         {/* <Stack.Screen name="BottomTab" component={BottomNavigation} />
         <Stack.Screen name="single-screen" component={SingleScreen} /> */}
 
-            {/* created by @app.webdeveloper */}
+        {/* created by @app.webdeveloper */}
 
-            <Stack.Screen name="register" component={RegisterScreen}/>
+        {/* <Stack.Screen name="register" component={RegisterScreen}/>
             <Stack.Screen name="login" component={LoginScreen}/>
             <Stack.Screen name='tabnavigation' component={BottomTabNavigation}/>
-            <Stack.Screen name='pickupdetail' component={DetailScreen}/>
+            <Stack.Screen name='pickupdetail' component={DetailScreen}/> */}
+
+        <Stack.Screen name='getstarted' component={GetstartedScreen} />
+        <Stack.Screen name='bottomtab' component={BottomTabNavigation} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
