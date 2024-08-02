@@ -1,0 +1,17 @@
+.listings-wrapper .card {
+    position: relative;
+}
+
+.listings-wrapper .card .card-img img {
+    filter:brightness(70%);
+    border-radius: 5px;
+}
+
+
+.listings-wrapper .card .card-body {
+    position: absolute;
+    bottom:0;
+    left:5%;
+    color:var(--white);
+    padding:.5rem;
+}
