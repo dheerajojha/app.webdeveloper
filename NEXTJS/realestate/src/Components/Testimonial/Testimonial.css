@@ -1,0 +1,13 @@
+.testimonial-wrapper {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 20px 8%;
+    border-radius: 5px;
+    height: 40vh;
+}
+
+.testimonial-wrapper .card {
+    background-color:gray;
+    padding:1rem;
+    border-radius: 10px;
+}

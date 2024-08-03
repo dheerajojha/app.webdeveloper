@@ -1,12 +1,14 @@
-import { Hero, Listings, Services } from '@/Components'
+import { Hero, Listings, Newlistings, Services, Testimonial } from '@/Components'
 import React from 'react'
 
 const page = () => {
   return (
     <>
-    <Hero/>
-  <Services/>
-  <Listings/>
+      <Hero />
+      <Services />
+      <Listings />
+      <Newlistings />
+      <Testimonial />
     </>
   )
 }

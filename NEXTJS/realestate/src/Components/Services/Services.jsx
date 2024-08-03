@@ -29,7 +29,7 @@ const Services = () => {
     <section className="services-wrapper">
       <div className="heading-between">
         <h2>More Than 500+ Have Joined the Search For a plce to live with Matrix</h2>
-        <Link href=''>View more Perks-</Link>
+        <Link href='' className='cta-white'>View more Perks-</Link>
 
       </div>
 

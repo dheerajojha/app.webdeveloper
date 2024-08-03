@@ -69,7 +69,7 @@ const Listings = () => {
         review: ['cool', 'effective', 'superb'],
         image: '/Images/l6.jpg',
         user: 'kevin',
-        new: true
+        new:false
     },
     {
         id: 7,
@@ -91,31 +91,8 @@ const Listings = () => {
         review: ['cool', 'effective', 'superb'],
         image: '/Images/l8.jpg',
         user: 'kevin',
-        new: false
+        new:false
     },
-    {
-        id: 9,
-        title: 'Jriyank Ocena',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus dignissimos dicta est esse excepturi, nihil eaque ullam commodi nemo enim obcaecati officiis ea mollitia iure sed quam architecto delectus corrupti!',
-        price: 20000,
-        rating: 4,
-        review: ['cool', 'effective', 'superb'],
-        image: '/Images/l9.jpg',
-        user: 'kevin',
-        new: true
-    },
-    {
-        id: 10,
-        title: 'Jriyank Ocena',
-        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus dignissimos dicta est esse excepturi, nihil eaque ullam commodi nemo enim obcaecati officiis ea mollitia iure sed quam architecto delectus corrupti!',
-        price: 20000,
-        rating: 4,
-        review: ['cool', 'effective', 'superb'],
-        image: '/Images/l10.jpg',
-        user: 'kevin',
-        new: true
-    },
-
     ])
     return (
         <section className="listings-wrapper">
@@ -124,7 +101,7 @@ const Listings = () => {
                     <h2>Find Your Place to live better With Matrix</h2>
                     <p>Lorem ipsum dolor sit amet convero!</p>
                 </div>
-                <Link href=''>View more--</Link>
+                <Link href='' className='cta-white'>View more--</Link>
             </div>
 
             <div className="card-container grid-4">
