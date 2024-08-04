@@ -1,0 +1,24 @@
+.hero-wrapper {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    gap: 1rem;
+}
+
+.hero-wrapper article {
+    text-align: center;
+}
+
+.hero-wrapper span {
+    color:var(--primary);
+   border:1px solid orange;
+   padding:.4rem;
+}
+
+.hero-wrapper form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 1fr;
+    border:1px solid var(--black);
+    padding:.5rem;
+    border-radius: 3px;
+}
