@@ -56,6 +56,13 @@ section{
     margin:auto;
 }
 
+.gap{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+
+}
+
 .flex-row-sm {
     display: flex;
     align-items: center;

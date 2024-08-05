@@ -1,10 +1,11 @@
 import React from 'react'
-import { Hero, Jobcategory } from "../Components"
+import { Carousel, Hero, Services } from "../Components"
 const Home = () => {
   return (
     <>
     <Hero />
-    <Jobcategory/>
+    <Services/>
+    <Carousel/>
     </>
   )
 }
