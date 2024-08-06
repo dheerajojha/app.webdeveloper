@@ -27,3 +27,10 @@
     background-color: var(--primary);
     color:var(--white)
 }
+
+@media screen  and (max-width:768px){
+    .newsletter-wrapper {
+        width: 80%;
+    }
+    
+}

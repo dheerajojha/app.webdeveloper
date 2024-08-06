@@ -5,9 +5,9 @@ import { FaLocationPin } from 'react-icons/fa6'
 const Hero = () => {
   return (
     <section className="hero-wrapper">
-      <article>
+      <article className='gap'>
         <h1>Make The <span>Best Move</span> <br /> to choose your new job</h1>
-        <p></p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla consequatur, sunt beatae quidem inventore</p>
       </article>
 
       <form action="">
