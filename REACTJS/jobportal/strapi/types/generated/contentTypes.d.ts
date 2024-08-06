@@ -377,10 +377,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     title: Attribute.String;
     description: Attribute.Text;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    backgroundimage: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    backgroundimage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -31,6 +31,7 @@ h3{
     border:none;
     outline:none;
     list-style: none;
+    /* border:1px solid red; */
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -50,7 +51,7 @@ header{
     padding:20px 8%;
 }
 
-section{
+section,footer{
     padding:60px 0;
     width:80%;
     margin:auto;
@@ -84,6 +85,9 @@ section{
 .heading {
     text-align: center;
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap:.8rem;
     ;
 }
 

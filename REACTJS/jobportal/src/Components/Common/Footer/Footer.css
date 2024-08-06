@@ -1,0 +1,36 @@
+footer .row-1{
+    display: grid;
+    grid-template-columns: 30% 20% 20% 30%;
+    gap:1rem;
+}
+footer .row-1 .logo a{
+    font-size: 24px;
+    font-weight: 600;
+    color:var(--primary)
+}
+
+footer .row-1 a{
+    display: block;
+    line-height: 2rem;
+}
+
+footer .row-1 h4{
+   margin-bottom: 1.5rem;
+}
+footer .row-2{
+  text-align:center;
+  border-top: 1px solid var(--black);
+  padding-top: 1rem;
+}
+
+@media screen and (max-width:1024px){
+    footer .row-1{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width:768px){
+    footer .row-1{
+        grid-template-columns:1fr;
+    }
+}

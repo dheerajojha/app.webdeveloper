@@ -1,11 +1,13 @@
 import React from 'react'
-import { Carousel, Hero, Services } from "../Components"
+import { Carousel, Hero, Newsletter, Services, Uploadcv } from "../Components"
 const Home = () => {
   return (
     <>
     <Hero />
     <Services/>
     <Carousel/>
+    <Uploadcv/>
+    <Newsletter/>
     </>
   )
 }

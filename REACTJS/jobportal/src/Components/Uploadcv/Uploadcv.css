@@ -1,0 +1,8 @@
+.uploadcv-wrapper .col-l .img-container {
+    max-height: 200px;
+   max-width:400px;
+}
+.uploadcv-wrapper .col-l .img-container img {
+    width:100%;
+    height:100%;
+}

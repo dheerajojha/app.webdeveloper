@@ -1,0 +1,29 @@
+.newsletter-wrapper {
+    width: 60%;
+    margin: auto;
+    padding: 60px 0;
+}
+
+
+.newsletter-wrapper .form-group {
+    display: flex;
+    flex:1
+}
+
+
+.newsletter-wrapper input  {
+    flex:7;
+    border:1px solid var(--black);
+    padding:.8rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.newsletter-wrapper button  {
+    flex:3;
+    padding:.5rem 1rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--primary);
+    color:var(--white)
+}
