@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import BottomTabNavigation from './Day036/BottomTabNavigation';
-import GetstartedScreen from '../Screens/Day036/GetstartedScreen';
+import HomeScreen from '../Screens/Day037/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,7 +10,7 @@ const StackNavigation: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="getstarted">
+        initialRouteName="home">
         {/* day 001 */}
         {/* <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Home" component={Home} /> */}
@@ -114,8 +113,10 @@ const StackNavigation: React.FC = () => {
             <Stack.Screen name='tabnavigation' component={BottomTabNavigation}/>
             <Stack.Screen name='pickupdetail' component={DetailScreen}/> */}
 
-        <Stack.Screen name='getstarted' component={GetstartedScreen} />
-        <Stack.Screen name='bottomtab' component={BottomTabNavigation} />
+        {/* <Stack.Screen name='getstarted' component={GetstartedScreen} />
+        <Stack.Screen name='bottomtab' component={BottomTabNavigation} /> */}
+
+        <Stack.Screen name='home' component={HomeScreen}/>
 
       </Stack.Navigator>
     </NavigationContainer>
