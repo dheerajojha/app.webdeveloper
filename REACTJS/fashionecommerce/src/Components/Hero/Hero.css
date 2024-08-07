@@ -1,0 +1,8 @@
+.hero-wrapper .col:last-child a {
+    line-height: 3rem;
+    display: block;
+}
+
+.hero-wrapper .col:nth-child(2) img {
+    max-height:500px;
+}
