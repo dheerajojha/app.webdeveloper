@@ -1,8 +1,44 @@
-.hero-wrapper .col:last-child a {
+.hero-wrapper {
+    height: 100vh;
+}
+
+.hero-wrapper .col-r a {
     line-height: 3rem;
     display: block;
 }
 
-.hero-wrapper .col:nth-child(2) img {
-    max-height:500px;
+.hero-wrapper .col-m img {
+    max-height: 500px;
+}
+
+.hero-wrapper .dropdown-mobile,
+li {
+    border: 1px solid var(--secondry);
+    width: 100%;
+    padding: 1rem;
+}
+
+.hero-wrapper .dropdown-mobile {
+    position: relative;
+}
+
+
+.hero-wrapper .dropdown-mobile ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.hero-wrapper .dropdown-mobile:hover ul {
+    display: block;
+}
+
+
+@media screen and (max-width:768px) {
+
+    .hero-wrapper .col-r,
+    .col-m {
+        display: none;
+    }
 }

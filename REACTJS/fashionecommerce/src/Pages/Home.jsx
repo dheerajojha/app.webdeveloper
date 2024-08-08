@@ -1,9 +1,13 @@
 import React from 'react'
-import { Hero } from "../Components"
+import { Gallery, Hero, Newsletter, Stat, Testimonial } from "../Components"
 const Home = () => {
   return (
     <>
       <Hero />
+      <Stat/>
+      <Gallery/>
+      <Testimonial/>
+      <Newsletter/>
     </>
   )
 }

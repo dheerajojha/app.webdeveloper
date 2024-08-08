@@ -1,0 +1,34 @@
+
+.newsletter-wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items:center;
+}
+.newsletter-wrapper .col-r {
+    background-color: var(--primary);
+    color:var(--white);
+    padding:2rem 3rem;
+}
+
+
+.newsletter-wrapper .col-r .form-group {
+    display: flex;
+    flex: 1;
+    background-color: var(--white);
+    padding:1rem;
+}
+
+.newsletter-wrapper .col-r .form-group input {
+    flex: 7;
+    width: 100%;
+}
+
+.newsletter-wrapper .col-r .form-group button {
+    flex: 3;
+}
+
+@media screen and (max-width:768px) {   
+.newsletter-wrapper {
+    grid-template-columns:1fr;
+}
+}

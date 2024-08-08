@@ -1,5 +1,94 @@
-header .logo a{
-color:var(--primary);
-font-weight:600;
-font-size: 24px;
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+header .nav-mobile {
+    display: none;
+    transition: .5s ease;
+}
+
+header .logo a {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 24px;
+}
+
+header .logo-mobile {
+    display: none;
+}
+
+header .bar {
+    font-size: 20px;
+    background: var(--primary);
+    color: var(--white);
+    padding: .5rem;
+    border-radius: 3px;
+    display: none;
+    cursor: pointer;
+}
+
+.nav-mobile.top-100 {
+    top: 100%;
+}
+
+@media screen and (max-width:768px) {
+    header .logo-desktop {
+        display: none;
+    }
+
+    header .logo-mobile {
+        display: block;
+    }
+
+    header .nav-desktop {
+        display: none;
+    }
+
+    header .nav-mobile {
+        display: block;
+    }
+
+    header .nav-mobile {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        top: -1000%;
+        right: 0;
+        height: 85vh;
+        width: 100%;
+        background: var(--primary);
+        padding: 1rem;
+    }
+
+    header .nav-mobile button {
+        width: 100%;
+        padding:1rem;
+        margin-right: 1rem;
+    }
+
+    header nav ul{
+        width: 100%;
+        text-align:center;
+    }
+    header nav ul li {
+        width: 100%;
+        border-bottom: 1px solid var(--white);
+        line-height: 3rem;
+    }
+
+    header nav ul li a {
+        color: var(--white)
+    }
+
+    header .header-btn {
+        display: none;
+    }
+
+    header .bar {
+        display: flex;
+    }
 }

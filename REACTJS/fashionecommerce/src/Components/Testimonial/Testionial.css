@@ -1,0 +1,13 @@
+.testimonial-wrapper .card {
+    background-color: var(--secondry);
+    padding: 1rem;
+    transition: .5s ease;
+}
+
+.testimonial-wrapper .card:hover {
+    background-color: var(--white);
+}
+
+.testimonial-wrapper .card .card-footer p {
+    font-weight: 600;
+}
