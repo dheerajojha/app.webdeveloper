@@ -1,0 +1,9 @@
+.gallery-wrapper .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-span {
+    grid-row: 1/3;
+}
