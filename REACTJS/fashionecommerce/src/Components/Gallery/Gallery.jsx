@@ -16,7 +16,6 @@ const Gallery = () => {
           item.attributes.swiperimage.data.map(img => img.attributes.url)
         );
         setGallery(imageUrls);
-        console.log(imageUrls)
         setLoading(false)
       }
     } catch (error) {
@@ -37,13 +36,18 @@ const Gallery = () => {
       <div className="heading-left">
         <h2>Gallery</h2>
       </div>
-      <Swiper slidesPerView={3} spaceBetween={15} className='card-container'>
+
+      <div className="card-container">
         {gallery.map((url, index) => (
-          <SwiperSlide key={index} className={`${index==0 && 'grid-span'}`}>
-            <img key={index} src={`http://localhost:1337${url}`} alt={`carousel-${index}`} width={'100%'} height={400} />
-          </SwiperSlide>
+          <div
+            key={index}
+            className={`card ${index === 0 && 'row-span' || index == 3 && 'col-span'}`}
+          >
+            <img src={`http://localhost:1337${url}`} alt={`carousel-${index}`} width={'100%'} height={'100%'}/>
+          </div>
         ))}
-      </Swiper>
+      </div>
+
 
     </section>
   )
