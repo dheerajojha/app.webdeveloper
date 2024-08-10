@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import GetStarted from '../Screens/Day037/GetStarted';
 import HomeScreen from '../Screens/Day037/HomeScreen';
+import BottomTabNavigation from './Day037/BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -116,7 +117,7 @@ const StackNavigation: React.FC = () => {
         <Stack.Screen name='bottomtab' component={BottomTabNavigation} /> */}
 
         <Stack.Screen options={{headerShown:false}} name='getstarted' component={GetStarted}/>
-        <Stack.Screen  name='home' component={HomeScreen}/>
+        <Stack.Screen  name='bottomtab' component={BottomTabNavigation}/>
 
       </Stack.Navigator>
     </NavigationContainer>

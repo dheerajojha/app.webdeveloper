@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native"
 const GetStarted = () => {
     const navigation: any = useNavigation()
     setTimeout(() => {
-        navigation.navigate('home')
+        navigation.navigate('bottomtab')
     }, 1000);
     return (
         <>
