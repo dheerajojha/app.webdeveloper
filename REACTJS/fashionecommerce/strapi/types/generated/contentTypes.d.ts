@@ -409,7 +409,7 @@ export interface ApiPopularPopular extends Schema.CollectionType {
   };
   attributes: {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    title: Attribute.String;
+    category: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

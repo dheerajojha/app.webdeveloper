@@ -23,7 +23,7 @@
         "audios"
       ]
     },
-    "title": {
+    "category": {
       "type": "string"
     }
   }
