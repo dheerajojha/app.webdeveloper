@@ -70,17 +70,17 @@ header .bar {
         margin-right: 1rem;
     }
 
-    header nav ul{
+    header .nav-mobile ul{
         width: 100%;
         text-align:center;
     }
-    header nav ul li {
+    header .nav-mobile ul li {
         width: 100%;
         border-bottom: 1px solid var(--white);
         line-height: 3rem;
     }
 
-    header nav ul li a {
+    header .nav-mobile ul li a {
         color: var(--white)
     }
 

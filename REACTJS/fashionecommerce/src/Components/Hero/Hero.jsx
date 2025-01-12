@@ -15,8 +15,8 @@ const Hero = () => {
         </Link>
 
         <div className="dropdown-mobile">
-          <div className="flex-row-md">
-            <small>View Dropdown</small>
+          <div className="flex-between">
+            <small>Links</small>
             <span><IoIosArrowDown /></span>
           </div>
           <ul>

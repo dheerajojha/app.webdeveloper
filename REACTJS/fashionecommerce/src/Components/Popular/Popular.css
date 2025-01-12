@@ -4,3 +4,10 @@
     gap: 1rem;
     align-items: center;
 }
+
+.popular-wrapper .heading span {
+    cursor: pointer;
+    border:1px solid var(--black);
+    padding:.7rem;
+    border-radius: 4px;
+}

@@ -12,7 +12,7 @@
 }
 
 .hero-wrapper .dropdown-mobile,
-li {
+.hero-wrapper .dropdown-mobile li {
     border: 1px solid var(--secondry);
     width: 100%;
     padding: 1rem;
@@ -20,6 +20,10 @@ li {
 
 .hero-wrapper .dropdown-mobile {
     position: relative;
+    display: none;
+}
+.hero-wrapper .dropdown-mobile:hover span{
+    transition: .5s ease;
 }
 
 
@@ -28,10 +32,15 @@ li {
     position: absolute;
     top: 100%;
     left: 0;
+    width:100%;
 }
 
 .hero-wrapper .dropdown-mobile:hover ul {
     display: block;
+}
+
+.hero-wrapper .dropdown-mobile:hover span{
+    transform: rotate(-90deg);
 }
 
 
@@ -41,4 +50,10 @@ li {
     .col-m {
         display: none;
     }
+
+    .hero-wrapper .dropdown-mobile {
+        display: block;
+    }
+
+
 }

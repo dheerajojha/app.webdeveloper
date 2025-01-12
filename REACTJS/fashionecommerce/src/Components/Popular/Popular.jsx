@@ -2,26 +2,35 @@ import React, { useEffect, useState } from 'react'
 import './Popular.css'
 import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
+import 'swiper/css/autoplay'
 const API_URL = 'http://localhost:1337/api'
 const Popular = () => {
+    const breakpoint = {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    }
     const [popular, setPopular] = useState([])
-    const [popularImage, setPopularImage] = useState([])
     const [error, setError] = useState(false)
     const [loading, setLoaading] = useState(true)
+    const [category, setCategory] = useState('all')
     const getAllPopular = async () => {
         try {
-            const res = await axios.get(`${API_URL}/populars?populate=*`)
-            console.log(res.data)
+            let url = `${API_URL}/populars?populate=*`;
+            if (category !== 'all') {
+                url += `&filters[category][$eq]=${category}`;
+            }
+            const res = await axios.get(url);
             if (res.data) {
                 const imageUrl = res.data.data.flatMap(item =>
                     item.attributes.image.data.map(img => img.attributes.url)
                 );
-                setPopularImage(imageUrl)
-                setPopular(res.data.data)
+                setPopular(imageUrl)
                 setLoaading(false)
+                console.log(res.data)
             }
-            console.log(popular)
         } catch (error) {
             console.log(error)
             setError(true)
@@ -30,7 +39,7 @@ const Popular = () => {
 
     useEffect(() => {
         getAllPopular()
-    }, [])
+    }, [category])
 
     if (loading) {
         return <div>Loading..</div>
@@ -43,14 +52,14 @@ const Popular = () => {
             <div className="heading">
                 <h2>Popular This Week</h2>
                 <div className="flex-row-md">
-                    <span>All</span>
-                    <span>Men</span>
-                    <span>Women</span>
+                    <span style={{ background: category === 'all' && '#ececea' }} onClick={() => setCategory('all')}>All</span>
+                    <span style={{ background: category === 'man' && '#ececea' }} onClick={() => setCategory('man')}>Man</span>
+                    <span style={{ background: category === 'women' && '#ececea' }} onClick={() => setCategory('women')}>Women</span>
                 </div>
             </div>
 
-            <Swiper classNamecard='container' slidesPerView={3} spaceBetween={15}>
-                {popularImage.map((url, index) => (
+            <Swiper autoplay modules={[Autoplay]} classNamecard='container' breakpoints={breakpoint} spaceBetween={15}>
+                {popular.map((url, index) => (
                     <SwiperSlide key={index}>
                         <img src={`http://localhost:1337${url}`} alt={`carousel-${index}`} width={'100%'} height={400} />
                     </SwiperSlide>
